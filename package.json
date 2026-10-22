@@ -1,1 +1,37 @@
-{"build":{"appId":"com.clipforge.studio","files":["electron-main.js","index.html","package.json"],"nsis":{"allowToChangeInstallationDirectory":true,"oneClick":false,"shortcutName":"ClipForge Studio"},"productName":"ClipForge Studio","win":{"target":"nsis"}},"dependencies":{"@capacitor/android":"^6.1.2","@capacitor/core":"^6.1.2"},"description":"ClipForge Studio - CapCut-style video editor","devDependencies":{"@capacitor/cli":"^6.1.2","electron":"^31.3.1","electron-builder":"^24.13.3"},"main":"electron-main.js","name":"clipforge-studio","scripts":{"dist:win":"electron-builder --win nsis"},"version":"1.0.0"}
+{
+  "build": {
+    "appId": "com.clipforge.studio",
+    "files": [
+      "electron-main.js",
+      "index.html",
+      "package.json"
+    ],
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "shortcutName": "ClipForge Studio"
+    },
+    "productName": "ClipForge Studio",
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    }
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/core": "^6.1.2"
+  },
+  "description": "ClipForge Studio - CapCut-style video editor",
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2",
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3"
+  },
+  "main": "electron-main.js",
+  "name": "clipforge-studio",
+  "scripts": {
+    "dist:win": "electron-builder --win nsis"
+  },
+  "version": "1.0.0",
+  "author": "ClipForge Studio"
+}
