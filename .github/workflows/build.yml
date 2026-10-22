@@ -27,6 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Prepare web folder for Capacitor
+        run: |
+          mkdir -p www
+          cp index.html www/index.html
+
       - name: Add Android platform and sync web app
         run: |
           npx cap add android
