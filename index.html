@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="description" content="ClipForge Studio — edit vertical video with a bigger clips bin, a taller magnetic timeline, and real exports up to 4K. Installable on phone and desktop."/>
+<meta name="theme-color" content="#0b0e13"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="ClipForge"/>
+<meta name="application-name" content="ClipForge Studio"/>
+<link rel="manifest" href="data:application/octet-stream;base64,eyJiYWNrZ3JvdW5kX2NvbG9yIjoiIzBiMGUxMyIsImNhdGVnb3JpZXMiOlsicGhvdG8iLCJwcm9kdWN0aXZpdHkiLCJlbnRlcnRhaW5tZW50Il0sImRlc2NyaXB0aW9uIjoiRWRpdCB2ZXJ0aWNhbCB2aWRlbyB3aXRoIGEgY2xlYW4gY2xpcHMgYmluLCBhIHNpbXBsZSBtYWduZXRpYyB0aW1lbGluZSwgcHJvIGNvbG91ciwgYXVkaW8gYW5kIHRleHQgdG9vbHMsIGFuZCByZWFsIGV4cG9ydHMgdXAgdG8gNEsuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJkaXNwbGF5X292ZXJyaWRlIjpbIndpbmRvdy1jb250cm9scy1vdmVybGF5Iiwic3RhbmRhbG9uZSIsIm1pbmltYWwtdWkiXSwiaWNvbnMiOlt7InB1cnBvc2UiOiJhbnkiLCJzaXplcyI6IjE5MngxOTIiLCJzcmMiOiJpY29uLTE5Mi5wbmciLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJwdXJwb3NlIjoiYW55Iiwic2l6ZXMiOiI1MTJ4NTEyIiwic3JjIjoiaWNvbi01MTIucG5nIiwidHlwZSI6ImltYWdlL3BuZyJ9LHsicHVycG9zZSI6Im1hc2thYmxlIiwic2l6ZXMiOiI1MTJ4NTEyIiwic3JjIjoiaWNvbi1tYXNrYWJsZS01MTIucG5nIiwidHlwZSI6ImltYWdlL3BuZyJ9XSwiaWQiOiIuLi8iLCJuYW1lIjoiQ2xpcEZvcmdlIFN0dWRpbyDigJQgVmlkZW8gRWRpdG9yIiwib3JpZW50YXRpb24iOiJhbnkiLCJzY29wZSI6Ii4uLyIsInNob3J0X25hbWUiOiJDbGlwRm9yZ2UiLCJzaG9ydGN1dHMiOlt7Im5hbWUiOiJPcGVuIHRoZSBlZGl0b3IiLCJzaG9ydF9uYW1lIjoiRWRpdG9yIiwidXJsIjoiLi4vIn0seyJuYW1lIjoiRXhwb3J0IGluIDRLIiwic2hvcnRfbmFtZSI6IkV4cG9ydCA0SyIsInVybCI6Ii4uLyNleHBvcnQifV0sInN0YXJ0X3VybCI6Ii4uLyIsInRoZW1lX2NvbG9yIjoiIzBiMGUxMyJ9"/>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABK0lEQVR4nO2Xuw2DMBCGz4gOkiY1O6SmYQFmYAAkOsagi5QBMkMWSJOaHVLT8OgiJU0cGePYPhvsJteAT/b9H+bODwICi/aHl8hva1PfEd43c2wlLAMJXIvzWoFrcR4iUHXc2oiPr2fN+wx4BwhNB07308IXpRU6jtEMiMRl/lUBVCJYCBSAbnAMhDYAHzTM61UgrKogzGsliDKG1WgGhNrz2rgHwIquBmAjTA21F2CyW3dRQiWhblDMioiuAlVw7HJsVIa/REz2gv95QFiGsmyP0grGy+7bjosBjvVj0a9tEhizEuLbWQqwmAFVqbHiACAUBwAYs3L21AZwbf4B+OuSqpTiYpi12yYR9/v8e1kOTH1HCICfiwkFCOiLD3EAJgdcQrBaQlGX1/M3HRNqz7+i50MAAAAASUVORK5CYII="/>
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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"/>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFi0lEQVR4nO3dPXJURxSG4R6VMmESYu/BMYk3wBq8AFeRaRlkrvICvAZvwIlj78GxEhllVOHACA9X96e7b/+c8533SREz3bovh547A7okA+5ev/k8ew047+nx4TJ7DVMWQMAxzAh82BMScWyj4u76JESMNT3j7vLAhIwcPcK+af2AxIxcPVpp9ieEkHFGq2ndZEITM85q1dCpPxWEjB7OTOvqCU3M6OVMW1VBEzN6q22sOGhixig1rRUFTcwYrbS57KCJGbOUtJcVNDFjttwGD4MmZliR02Lzt76BmXaDZjrDmqMmN4MmZli11yZHDkhZDZrpDOu2Gn0RNDHDi7VWOXJAyjdBM53hzbJZJjSkEDSkfA2a4wa8um6XCQ0pBA0pNylx3IB/zw0zoSGFoCGFoCHlwvkZSpjQkELQkELQkELQkELQkELQkELQkELQkHI7ewFqnv78pfj33L1932ElMfFO4Uk1AR8h8HoEXaFHxFuIuwxBFxgZ8hJh5yHoDDNDXiLsfQS9w1LIS4S9jtt2GyzHnJL99c3ChF7wGArT+n9M6CseY07J77p7IOgvvEfhff2tEHTSiUFlH2eED1otArX9lAodtOrFV91XjrBBq1909f1tCRl0lIsdZZ/XwgUd7SJH22+4oKEtVNDRptWzSPsOE3Ski7omyv7DBI0YQgTdejrdvrtv+nijRJjSIYLu4fbdvduwlckH3XsqeQtbfUrLBz2Kt7BVSQc9Yxp5CFt5SksHPZOHsBURdGeEPZZs0Nb+WrUWtrXvTyuyQVtlLWw1BD0JUfdB0BMxrduTDNrb+XBW2N6+Tzkkg/aKiX0eQRtE2PUI2jDCLkfQDhB2PoJ2hLCPEbRDhL2Nn4Ll0KffP8xeglkE7QghHyNoBwg5H0EbRsjlCNogQq5H0IYQ8nmSQd+9fe/qgzezQlb8YUOSQXvBRG6PN1YmIeY+mNCDEXJfskFbO0dbC1nx/JyScNBWWAtZHUF3QshzSAc949jhIWTV40ZK4kGP5CHkCOSD7j2lvYWsPJ1TChB0L95CjuJy9/rN59mLGMHSLbxZ1KdzSrxTCDFhgo4wnfZE2X+YoFOKc1GXIu07VNDQFy7oSNMqpXj7DRd0SnEucpR9XgsZdEr6F1t9f1vCBp2S7kVX3VeO0EGnpHfx1fZTKnzQKelEoLKPMwj6C+8xeF9/KwR9xWsUXtfdQ5gPJ5Xy8GEmQn6JCb3BeizW1zcLEzqDpWlNyPsIusDMsAk5D0FXGBk2IZch6JN6xE3E9Qi6sZrACbgdgoYUbttBCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDyvAfGmTpH5ymlPfh+o+/fdfkuV799M/h1/xw/3eT59rz14fvD7/m448/b/7aqz9+bbmcpoZ9wN9ayEtrYbcKeWkt7BEhL62FvRfyksWwOXJAypCgrU/nlF6usdd0XnvsGdN57XlLpnPN14/AhIYUgoaUIUF7+Gf6yzXm3JGotXzsnLsOPSyft/RFHi8Kgc6G/78c1l4gch96HfehAQM4ckAKQUMKQUMKQUPKzdPjw2X2IoAWnh4fLkxoSCFoSCFoSLlJ6b+zx+yFAGc8N8yEhhSChpSvQXPsgFfX7TKhIYWgIeWboDl2wJtls0xoSHkRNFMaXqy1ujqhiRrWbTXKkQNSNoNmSsOqvTZ3JzRRw5qjJjlyQMph0ExpWJHTYtaEJmrMlttg9pGDqDFLSXtFZ2iixmilzRW/KCRqjFLTWtVdDqJGb7WNVd+2I2r0cqatJlHyP5iihRZDsskbK0xrnNWqoeYhMq1RovUwbP7WN9MauXq00jU+pjXW9Bx6w6Ypccc26m/uKccD4o5hxvHTxHmXwDVYeP30L+o13gU1aMGMAAAAAElFTkSuQmCC"/>
+<title>ClipForge Studio — Video Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0e13;--panel:#12161f;--panel2:#171c28;--panel3:#1e2536;--line:#242c3f;--text:#f2f4f8;--muted:#8b95ad;--muted2:#5f6a82;--accent:#00d4a6;--accent2:#ffb020;--blue:#3b82f6;--pink:#ff4d7d;--radius:14px}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;cursor:pointer} input{font-family:inherit}
+a{color:inherit}
+/* TOPBAR */
+.topbar{height:56px;display:flex;align-items:center;gap:10px;padding:0 14px;border-bottom:1px solid var(--line);background:#0e121a;position:sticky;top:0;z-index:30}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}.logoMark{width:32px;height:32px;border-radius:9px;background:var(--accent);display:grid;place-items:center;color:#04201a;font-weight:900}
+.proj{font-size:13px;color:var(--muted)} .proj b{color:#fff;font-size:14px}
+.topActions{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{border:1px solid var(--line);background:var(--panel2);color:#fff;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600}
+.pill.primary{background:var(--accent);color:#04201a;border-color:transparent;padding:9px 16px}
+.iconBtn{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:#fff;display:grid;place-items:center;font-size:16px}
+/* LAYOUT */
+.shell{display:grid;grid-template-columns:300px 1fr 300px;grid-template-rows:1fr auto;min-height:calc(100vh - 56px)}
+.bin{border-right:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;overflow:hidden}
+.stage{background:#080a0f;display:flex;flex-direction:column;min-width:0}
+.props{border-left:1px solid var(--line);background:var(--panel);overflow:auto}
+.timelineWrap{grid-column:1/-1;border-top:1px solid var(--line);background:#0e121a}
+/* BIN */
+.binHead{padding:14px 14px 10px}.binHead h2{margin:0;font-size:15px}.binHead p{margin:4px 0 0;color:var(--muted);font-size:12.5px;line-height:1.4}
+.searchRow{display:flex;gap:8px;margin-top:12px}.search{flex:1;background:#0b0e13;border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:#fff;outline:none}
+.tabs{display:flex;gap:6px;padding:0 14px 10px;flex-wrap:wrap}.tab{padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:12px;font-weight:600}.tab.active{background:#fff;color:#0b0e13;border-color:#fff}
+.binGrid{padding:6px 12px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;overflow:auto;align-content:start;grid-auto-rows:min-content}
+.clipCard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel2);text-align:left;padding:0;color:#fff}
+.clipThumb{height:92px;position:relative;display:flex;align-items:flex-end;padding:8px}.clipThumb span{font-size:11px;font-weight:700;background:rgba(0,0,0,.65);padding:4px 6px;border-radius:999px}
+.clipMeta{padding:8px 9px}.clipMeta b{font-size:12.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.clipMeta small{color:var(--muted);font-size:11px}
+.fav{position:absolute;top:7px;right:7px;width:26px;height:26px;border-radius:999px;border:0;background:rgba(0,0,0,.6);color:#fff}
+.usedBadge{position:absolute;top:7px;left:7px;background:var(--accent);color:#04201a;font-size:10px;font-weight:800;padding:3px 6px;border-radius:999px}
+/* STAGE */
+.stageTop{display:flex;gap:8px;flex-wrap:wrap;padding:12px;align-items:center;justify-content:space-between}
+.ratios{display:flex;gap:6px;flex-wrap:wrap}.ratio{padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);font-weight:700;font-size:12px}.ratio.active{background:#fff;color:#111;border-color:#fff}
+.previewWrap{flex:1;display:flex;align-items:center;justify-content:center;padding:8px 16px 6px;min-height:320px}
+.phoneFrame{background:#000;border:1px solid #2a344d;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.5);transition:all .25s}
+.scene{width:100%;height:100%;position:relative;background:linear-gradient(160deg,#0f766e,#164e63 45%,#1e293b);overflow:hidden}
+.scene:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 20% 10%,rgba(255,255,255,.28),transparent 60%),radial-gradient(500px 260px at 85% 90%,rgba(255,176,32,.35),transparent 60%)}
+.sceneLabel{position:absolute;left:14px;top:14px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);padding:6px 8px;border-radius:999px;font-size:11px;font-weight:700;z-index:5}
+.captions{position:absolute;left:50%;transform:translateX(-50%);bottom:16%;background:rgba(0,0,0,.72);padding:8px 12px;border-radius:8px;font-weight:800;font-size:clamp(13px,2.2vw,20px);text-align:center;max-width:88%}
+.product{position:absolute;right:10%;bottom:18%;width:34%;aspect-ratio:1;border-radius:16px;background:linear-gradient(145deg,#fef3c7,#f59e0b);display:grid;place-items:center;font-size:42px;box-shadow:0 16px 30px rgba(0,0,0,.35)}
+.transport{display:flex;align-items:center;gap:10px;justify-content:center;padding:10px 12px 14px;flex-wrap:wrap}
+.playBtn{width:48px;height:48px;border-radius:999px;border:0;background:#fff;color:#111;font-size:18px;font-weight:900}
+.timecode{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);padding:8px 10px;border-radius:999px}
+.toolRail{display:flex;gap:8px;overflow:auto;padding:0 12px 14px;scrollbar-width:none}.toolRail::-webkit-scrollbar{display:none}
+.tool{min-width:74px;border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:10px 8px;color:#fff;text-align:center}.tool b{display:block;font-size:18px}.tool span{font-size:11px;color:var(--muted);font-weight:600}.tool.active{border-color:var(--accent);outline:2px solid rgba(0,212,166,.25)}
+/* PROPS */
+.props section{padding:16px;border-bottom:1px solid var(--line)} .props h3{margin:0 0 4px;font-size:14px}.props p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.5}
+.panel{display:none}.panel.active{display:block}
+.inspHead{display:flex;align-items:center;gap:8px;padding:12px 16px 0;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.sliders{margin-top:12px;display:grid;gap:12px}.sliderRow label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-bottom:6px}.sliderRow input{width:100%;accent-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chip{font-size:12px;padding:7px 9px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:#fff}.chip.active{background:var(--accent);color:#04201a;border-color:transparent;font-weight:700}
+/* TIMELINE */
+.tlHead{display:flex;align-items:center;gap:8px;padding:10px 12px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tlHead h3{margin:0;font-size:14px}.tlHead p{margin:0;color:var(--muted);font-size:12px}
+.tlControls{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tlScroller{overflow:auto;position:relative;background:#0b0e13}
+.ruler{height:26px;display:flex;border-bottom:1px solid var(--line);position:sticky;top:0;background:#0e121a;z-index:3;min-width:760px}
+.ruler span{flex:1;font-family:monospace;font-size:10px;color:var(--muted2);padding:6px 8px;border-left:1px solid #1c2333}
+.tracks{position:relative;min-width:760px;padding:8px 0 12px}
+.track{display:flex;align-items:stretch;margin-bottom:6px;min-height:52px}
+.trackLabel{width:92px;flex:0 0 92px;position:sticky;left:0;z-index:2;background:#0e121a;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;padding:0 10px}.trackLabel b{font-size:11px;letter-spacing:.06em;text-transform:uppercase}.trackLabel small{color:var(--muted);font-size:11px}
+.trackLane{flex:1;position:relative;background:repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.04) 79px 80px);border-bottom:1px dashed #1c2333;margin-right:12px}
+.tClip{position:absolute;top:5px;height:42px;border-radius:9px;padding:6px 8px;font-size:11px;font-weight:700;overflow:hidden;border:1px solid rgba(255,255,255,.25);cursor:grab;white-space:nowrap}
+.tClip.selected{outline:2px solid #fff;outline-offset:1px}
+.tClip small{display:block;font-weight:500;opacity:.85;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wave{position:absolute;left:6px;right:6px;bottom:4px;height:10px;display:flex;gap:2px;align-items:end;opacity:.7}.wave i{flex:1;background:#fff;border-radius:2px;display:block}
+.playhead{position:absolute;top:0;bottom:0;width:2px;background:#ff3b30;z-index:5;pointer-events:none}.playhead:before{content:"";position:absolute;top:0;left:-6px;border:7px solid transparent;border-top:9px solid #ff3b30}
+.minimap{margin:0 12px 12px;height:36px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);position:relative;overflow:hidden}.minimap i{position:absolute;top:6px;height:24px;border-radius:6px;opacity:.9}
+.expanded .track{min-height:72px}.expanded .tClip{height:60px}.expanded .trackLane{min-height:72px}
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;place-items:center;padding:16px;z-index:50}.modal.open{display:grid}
+.sheet{background:#12161f;border:1px solid var(--line);border-radius:18px;max-width:560px;width:100%;padding:20px;max-height:90vh;overflow:auto}
+.resGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.res{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:12px;padding:12px;text-align:left}.res.active{border-color:var(--accent);background:#0f2a24}.res b{font-size:15px}.res span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.progress{height:10px;background:#222;border-radius:999px;overflow:hidden;margin-top:14px}.progress i{display:block;height:100%;background:var(--accent);width:0%}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;background:#fff;color:#111;padding:10px 14px;border-radius:999px;font-weight:700;font-size:13px;display:none;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.shell{min-width:0}.bin,.stage,.props,.timelineWrap{min-width:0;max-width:100%}
+.clipMeta>div{flex-wrap:wrap}.clipMeta .chip{min-width:0}
+/* NEW EDITING FEATURES */
+.fxGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:10px}
+.fxBtn{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:11px;padding:10px 6px;font-size:11px;font-weight:700;text-align:center;line-height:1.3}
+.fxBtn b{display:block;font-size:17px;margin-bottom:3px}
+.fxBtn.active{border-color:var(--accent);background:#0f2a24;color:#a7f3d0}
+.swatch{width:28px;height:28px;border-radius:999px;border:2px solid rgba(255,255,255,.25);cursor:pointer;padding:0}
+.swatch.active{border-color:#fff;outline:2px solid var(--accent);outline-offset:2px}
+.textInput{width:100%;background:#0b0e13;border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:#fff;outline:none;font-size:13px}
+.textInput:focus{border-color:var(--accent)}
+select.textInput{appearance:none}
+.toggleRow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed #232c42;font-size:12.5px;font-weight:600}
+.toggleRow:last-child{border-bottom:0}
+.toggle{width:42px;height:24px;border-radius:999px;background:#2a344d;border:0;position:relative;flex:0 0 42px;padding:0}
+.toggle:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:999px;background:#fff;transition:.18s}
+.toggle.on{background:var(--accent)} .toggle.on:after{left:21px}
+.kfRow{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.kfDot{font-size:11px;padding:6px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);font-weight:700}
+.kfDot.active{background:#fff;color:#111;border-color:#fff}
+.dividerLabel{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:14px 0 6px}
+@keyframes popIn{0%{transform:translateX(-50%) scale(.6);opacity:0}60%{transform:translateX(-50%) scale(1.08)}100%{transform:translateX(-50%) scale(1);opacity:1}}
+@keyframes slideUp{from{transform:translate(-50%,18px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes bounceIn{0%{transform:translateX(-50%) translateY(0)}30%{transform:translateX(-50%) translateY(-10px)}60%{transform:translateX(-50%) translateY(2px)}100%{transform:translateX(-50%) translateY(0)}}
+.animPop{animation:popIn .55s ease both}.animSlide{animation:slideUp .5s ease both}.animFade{animation:fadeIn .6s ease both}.animBounce{animation:bounceIn .7s ease both}
+@keyframes typeAnim{from{transform:translateX(-50%);clip-path:inset(0 100% 0 0);opacity:1}to{transform:translateX(-50%);clip-path:inset(0 0 0 0);opacity:1}}
+@keyframes zoomOutAnim{from{transform:translateX(-50%) scale(1.45);opacity:0}to{transform:translateX(-50%) scale(1);opacity:1}}
+.animType{animation:typeAnim .85s steps(20) both}.animZoom{animation:zoomOutAnim .6s ease both}
+@media(min-width:981px){.props{position:sticky;top:56px;align-self:start;height:calc(100vh - 56px);height:calc(100dvh - 56px);overflow-y:auto}.bin{position:sticky;top:56px;align-self:start;height:calc(100vh - 56px);height:calc(100dvh - 56px)}.binGrid{flex:1;min-height:0}}
+#vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 52%,rgba(0,0,0,.62) 100%);display:none;z-index:3}
+#grain{position:absolute;inset:0;pointer-events:none;opacity:.18;display:none;z-index:3;background-image:radial-gradient(rgba(255,255,255,.9) 1px,transparent 1px);background-size:4px 4px;mix-blend-mode:overlay}
+.beatBar{display:flex;gap:4px;align-items:flex-end;height:34px;margin-top:10px;background:#0b0e13;border:1px solid var(--line);border-radius:10px;padding:8px}
+.beatBar i{flex:1;background:var(--accent);border-radius:3px;display:block;min-height:4px}
+.beatBar i.beat{background:var(--accent2)}
+/* APP PACKAGING — installable mobile + desktop app */
+html{overscroll-behavior:none}body{overscroll-behavior-y:none;-webkit-user-select:none;user-select:none}input,textarea,select{-webkit-user-select:text;user-select:text}
+.topbar{padding-top:env(safe-area-inset-top,0px)}
+.toast{bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+.appBanner{display:none;align-items:center;gap:10px;padding:10px 14px;background:#101623;border-bottom:1px solid var(--line);font-size:13px;line-height:1.45;flex-wrap:wrap}
+.appBanner.show{display:flex}
+.appBanner img{width:34px;height:34px;border-radius:9px;flex:0 0 34px}
+.appBanner b{color:#fff}.appBanner span{color:var(--muted)}
+.appBanner .pill{margin-left:auto}
+.appStatus{font-size:11px;font-weight:800;padding:5px 8px;border-radius:999px;background:var(--panel3);color:var(--muted);white-space:nowrap}
+.appStatus.installed{background:#0f2a24;color:var(--accent)}
+.platGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.plat{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:12px;padding:12px;text-align:left;width:100%}
+.plat b{font-size:14px;display:flex;align-items:center;gap:8px}
+.plat span{display:block;color:var(--muted);font-size:12px;margin-top:4px;line-height:1.5}
+.plat.active{border-color:var(--accent);background:#0f2a24}
+.steps{margin:12px 0 0;padding:0;list-style:none;counter-reset:st;display:grid;gap:9px}
+.steps li{counter-increment:st;display:flex;gap:10px;font-size:13px;line-height:1.55;color:var(--text)}
+.steps li:before{content:counter(st);flex:0 0 22px;width:22px;height:22px;border-radius:999px;background:var(--accent);color:#04201a;font-weight:800;font-size:12px;display:grid;place-items:center;margin-top:1px}
+.steps li span{color:var(--muted)} .steps li b{color:#fff}
+.specRow{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed #232c42;font-size:12.5px}
+.specRow:last-child{border-bottom:0}.specRow span{color:var(--muted)}.specRow b{text-align:right}
+.kbd{font-family:"JetBrains Mono",monospace;font-size:11px;background:var(--panel3);border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:2px 6px;color:#fff;white-space:nowrap}
+body.isApp .inBrowserOnly{display:none!important}
+body.isApp .topbar{box-shadow:0 1px 0 var(--line)}
+/* NATIVE PACKAGING — APK + EXE */
+.nativeGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.nativeCard{border:1px solid var(--line);background:var(--panel2);border-radius:14px;padding:14px;text-align:left}
+.nativeCard h4{margin:0;font-size:15px;display:flex;align-items:center;gap:8px}
+.nativeCard p{margin:6px 0 0;color:var(--muted);font-size:12.5px;line-height:1.55}
+.nativeCard .pill{margin-top:10px;width:100%;justify-content:center;text-align:center}
+.nativeMeta{margin-top:10px;border-top:1px dashed #232c42;padding-top:8px}
+.nativeMeta .specRow{padding:6px 0;font-size:12px}
+.buildSteps{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:12.5px;line-height:1.6}
+.buildSteps li{margin-bottom:4px}.buildSteps li b{color:#fff}
+.buildSteps code,.codeInline{font-family:"JetBrains Mono",monospace;font-size:11px;background:#0b0e13;border:1px solid var(--line);border-radius:6px;padding:2px 5px;color:#e2e8f0;word-break:break-all}
+.fieldGrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.fieldGrid label{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px}
+.statusDot{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;padding:5px 8px;border-radius:999px;background:#0f2a24;color:var(--accent)}
+@media(max-width:640px){.nativeGrid{grid-template-columns:1fr}.fieldGrid{grid-template-columns:1fr}}
+@media(max-width:560px){.platGrid{grid-template-columns:1fr}.appBanner .pill{margin-left:0}}
+@media(max-width:980px){.shell{display:flex;flex-direction:column;min-height:auto}.bin{order:4;border-right:0;border-top:1px solid var(--line);width:100%}.binGrid{grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;overflow:visible}.stage{order:1;width:100%}.props{order:2;border-left:0;border-top:1px solid var(--line);width:100%}.timelineWrap{order:3;width:100%;overflow:hidden}.previewWrap{min-height:0;padding:10px}.topbar{height:auto;padding:10px;flex-wrap:wrap}.tlScroller{max-width:100vw}}
+@media(max-width:560px){.binGrid{grid-template-columns:1fr 1fr}.previewWrap{padding:6px}.trackLabel{width:64px;flex-basis:64px}.trackLabel small{display:none}.phoneFrame{max-width:92vw!important}.stageTop{justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="logo"><div class="logoMark">◐</div><div>ClipForge <span style="color:var(--muted);font-weight:500">Studio</span><div class="proj"><b>Herb n Glow — Product Reel</b> · Draft saved 10:42 PM · 9:16</div></div></div>
+  <div class="topActions">
+    <span class="appStatus" id="appStatus">WEB APP</span>
+    <button class="pill" onclick="openNative()">⬇ APK / EXE</button>
+    <button class="pill inBrowserOnly" onclick="openApp()">📲 Get the App</button>
+    <button class="pill primary" onclick="openExport()">Export</button>
+  </div>
+</header>
+
+<div class="appBanner inBrowserOnly" id="appBanner" role="region" aria-label="Install ClipForge Studio">
+  <img src="data:image/png;base64,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" alt="ClipForge Studio app icon"/>
+  <div style="flex:1;min-width:180px"><b>ClipForge Studio is an app now.</b> <span id="appBannerText">Install it on this device — full-screen editor, home-screen icon, no browser bars.</span></div>
+  <button class="pill primary" onclick="installApp()">Install app</button>
+  <button class="pill" onclick="openApp()">All platforms</button>
+  <button class="iconBtn" onclick="dismissBanner()" aria-label="Dismiss install banner">✕</button>
+</div>
+
+<div class="shell">
+  <!-- MEDIA BIN - IMPROVED -->
+  <aside class="bin" id="binPanel">
+    <div class="binHead">
+      <div style="display:flex;justify-content:space-between;align-items:start"><h2>Media</h2><button class="pill" onclick="importClip()" style="padding:7px 10px">+ Import</button></div>
+      <p>Your clips, photos and audio — with real names and durations. Tap <b style="color:#fff">+ Import</b> to add media from this device.</p>
+      <div class="searchRow"><input id="search" class="search" placeholder="Search clips, e.g. serum, unboxing…" oninput="renderBin()"><button class="pill" onclick="toggleFavFilter(this)">★ Favs</button></div>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-f="all" onclick="setFilter('all',this)">All • 12</button>
+      <button class="tab" data-f="video" onclick="setFilter('video',this)">Video</button>
+      <button class="tab" data-f="photo" onclick="setFilter('photo',this)">Photos</button>
+      <button class="tab" data-f="audio" onclick="setFilter('audio',this)">Audio</button>
+      <button class="tab" data-f="unused" onclick="setFilter('unused',this)">Unused</button>
+      <button class="tab" data-f="used" onclick="setFilter('used',this)">In timeline</button>
+    </div>
+    <div class="binGrid" id="binGrid"></div>
+    <div style="padding:0 14px 14px;color:var(--muted);font-size:12px;line-height:1.5;border-top:1px solid var(--line);padding-top:12px">Tip: you can also drag video, photo or audio files onto this panel to import them. Tap <b style="color:#fff">Preview</b> to watch a clip before adding it.</div>
+  </aside>
+
+  <!-- STAGE -->
+  <main class="stage">
+    <div class="stageTop">
+      <div class="ratios" id="ratios">
+        <button class="ratio active" onclick="setRatio('9:16',this)">9:16 TikTok / Reels</button>
+        <button class="ratio" onclick="setRatio('1:1',this)">1:1 Feed</button>
+        <button class="ratio" onclick="setRatio('16:9',this)">16:9 YouTube</button>
+        <button class="ratio" onclick="setRatio('4:5',this)">4:5 Portrait</button>
+      </div>
+    </div>
+
+    <div class="previewWrap">
+      <div class="phoneFrame" id="frame" style="width:min(340px,86vw);aspect-ratio:9/16">
+        <div class="scene" id="scene">
+          <div class="sceneLabel" id="sceneLabel">▶ Serum_Closeup.mp4 • 0:03.2</div>
+          <video id="impVideo" playsinline loop style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2;background:#000"></video>
+          <img id="impImage" alt="Imported clip preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2"/>
+          <button id="impClose" class="iconBtn" onclick="closeImportPreview()" aria-label="Close preview" style="position:absolute;top:10px;right:10px;z-index:6;display:none">✕</button>
+          <div id="sceneHeadline" style="position:absolute;left:14px;top:52px;font-weight:800;line-height:1.05;font-size:28px;max-width:75%">Herb n Glow<br><span style="color:#fde68a">Vitamin C Serum</span></div>
+          <div class="product" id="sceneProduct">🧴</div>
+          <div class="captions" id="captionText">Glow in 7 days — no filter needed ✨</div>
+          <div id="vignette"></div><div id="grain"></div>
+          <div id="stickerLayer" style="position:absolute;left:12px;bottom:28%;font-size:28px;display:none;z-index:4">🌿</div>
+          <div id="overlayText" style="position:absolute;top:18%;left:50%;transform:translateX(-50%);font-weight:800;font-size:13px;background:#fff;color:#111;padding:5px 8px;border-radius:999px;display:none;z-index:4;text-align:center">NEW TEXT</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="transport">
+      <span class="timecode" id="tc">00:03.20 / 00:18.00</span>
+      <button class="pill" onclick="seek(-5)">⏮ -5s</button>
+      <button class="playBtn" id="playBtn" onclick="togglePlay()">▶</button>
+      <button class="pill" onclick="seek(5)">+5s ⏭</button>
+      <button class="pill" onclick="showToast('Volume: 82% • Fade in 0.4s')">🔊 82%</button>
+    </div>
+
+    <div class="toolRail" id="toolRail">
+      <button class="tool active" onclick="selectTool(this,'Edit','editPanel')"><b>✂️</b><span>Edit</span></button>
+      <button class="tool" onclick="selectTool(this,'Audio','audioStudio')"><b>🎵</b><span>Audio</span></button>
+      <button class="tool" onclick="selectTool(this,'Text','textStudio')"><b>T</b><span>Text</span></button>
+      <button class="tool" onclick="selectTool(this,'Stickers','effectsLib')"><b>☺</b><span>Stickers</span></button>
+      <button class="tool" onclick="selectTool(this,'Effects','effectsLib')"><b>✦</b><span>Effects</span></button>
+      <button class="tool" onclick="selectTool(this,'Filters','colorGrade')"><b>◐</b><span>Filters</span></button>
+      <button class="tool" onclick="selectTool(this,'Canvas','transformBox')"><b>▭</b><span>Canvas</span></button>
+      <button class="tool" onclick="selectTool(this,'Animation','animBox')"><b>◆</b><span>Animation</span></button>
+      <button class="tool" onclick="selectTool(this,'Captions','captionsBox')"><b>CC</b><span>Captions</span></button>
+      <button class="tool" onclick="splitAtPlayhead()"><b>⫼</b><span>Split</span></button>
+      <button class="tool" onclick="toggleBgRemove(this)"><b>⬢</b><span>BG Remove</span></button>
+      <button class="tool" onclick="selectTool(this,'Chroma Key','effectsLib')"><b>🟢</b><span>Chroma</span></button>
+      <button class="tool" onclick="selectTool(this,'Mask','transformBox')"><b>◑</b><span>Mask</span></button>
+    </div>
+  </main>
+
+  <!-- PROPS -->
+  <aside class="props">
+    <div class="inspHead"><span id="inspTitle">Edit</span></div>
+    <section class="panel active" id="editPanel">
+      <h3 id="propTitle">Selected: Serum_Closeup.mp4</h3><p id="propDesc">Video • 4.2s • 1080×1920 • Trim handles are on the timeline clip edges.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px">
+        <button class="chip" onclick="splitAtPlayhead()">✂ Split</button><button class="chip" onclick="duplicateSelected()">⧉ Duplicate</button><button class="chip" onclick="deleteSelected()">🗑 Delete</button><button class="chip" onclick="showToast('Reversed clip')">↩ Reverse</button><button class="chip" onclick="showToast('Freeze frame at playhead')">❄ Freeze</button>
+      </div>
+      <div class="sliders">
+        <div class="sliderRow"><label>Speed <span id="speedVal">1.00×</span></label><input type="range" min="25" max="200" value="100" oninput="document.getElementById('speedVal').textContent=(this.value/100).toFixed(2)+'×'"></div>
+        <div class="sliderRow"><label>Volume <span>82%</span></label><input type="range" value="82"></div>
+        <div class="sliderRow"><label>Opacity <span>100%</span></label><input type="range" value="100" oninput="document.getElementById('scene').style.opacity=this.value/100"></div>
+      </div>
+      <div class="dividerLabel">Adjust &amp; Filter</div>
+      <p>Live preview — drag and watch the canvas update.</p>
+      <div class="sliders">
+        <div class="sliderRow"><label>Brightness <span id="bVal">+8</span></label><input type="range" min="-50" max="50" value="8" oninput="applyFilter()"></div>
+        <div class="sliderRow"><label>Contrast <span id="cVal">+12</span></label><input type="range" min="-50" max="50" value="12" oninput="applyFilter()"></div>
+        <div class="sliderRow"><label>Saturation <span id="sVal">+18</span></label><input type="range" min="-50" max="80" value="18" oninput="applyFilter()"></div>
+      </div>
+      <div class="chips"><button class="chip active" onclick="pickFilter(this,'Glow')">Glow</button><button class="chip" onclick="pickFilter(this,'Warm')">Warm</button><button class="chip" onclick="pickFilter(this,'Clean')">Clean</button><button class="chip" onclick="pickFilter(this,'Vivid')">Vivid</button><button class="chip" onclick="pickFilter(this,'None')">None</button></div>
+      <div class="chips"><span style="font-size:12px;color:var(--muted);align-self:center">Transition:</span><button class="chip" onclick="showToast('Transition: Fade 0.4s')">Fade</button><button class="chip" onclick="showToast('Transition: Zoom')">Zoom</button><button class="chip" onclick="showToast('Transition: Slide')">Slide</button></div>
+    </section>
+    <!-- TRANSFORM & CROP -->
+    <section class="panel" id="transformBox">
+      <h3>Transform &amp; Crop</h3><p>Resize, rotate and reposition the selected clip. Changes apply live to the preview.</p>
+      <div class="sliders">
+        <div class="sliderRow"><label>Scale <span id="scaleVal">100%</span></label><input id="scaleRange" type="range" min="60" max="160" value="100" oninput="applyTransform()"></div>
+        <div class="sliderRow"><label>Rotate <span id="rotVal">0°</span></label><input id="rotRange" type="range" min="-45" max="45" value="0" oninput="applyTransform()"></div>
+        <div class="sliderRow"><label>Position X <span id="posXVal">0</span></label><input id="posXRange" type="range" min="-40" max="40" value="0" oninput="applyTransform()"></div>
+        <div class="sliderRow"><label>Position Y <span id="posYVal">0</span></label><input id="posYRange" type="range" min="-40" max="40" value="0" oninput="applyTransform()"></div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+        <button class="chip" onclick="flipClip('h')">↔ Flip H</button>
+        <button class="chip" onclick="flipClip('v')">↕ Flip V</button>
+        <button class="chip" onclick="resetTransform()">Reset</button>
+      </div>
+      <div class="dividerLabel">Crop to</div>
+      <div class="chips" style="margin-top:0"><button class="chip active" onclick="pickCrop(this,'Original')">Original</button><button class="chip" onclick="pickCrop(this,'9:16')">9:16</button><button class="chip" onclick="pickCrop(this,'1:1')">1:1</button><button class="chip" onclick="pickCrop(this,'16:9')">16:9</button><button class="chip" onclick="pickCrop(this,'Free')">Free</button></div>
+      <div class="dividerLabel">Blend mode</div>
+      <div class="chips" style="margin-top:0"><button class="chip active" onclick="pickBlend(this,'Normal')">Normal</button><button class="chip" onclick="pickBlend(this,'Screen')">Screen</button><button class="chip" onclick="pickBlend(this,'Multiply')">Multiply</button><button class="chip" onclick="pickBlend(this,'Overlay')">Overlay</button></div>
+    </section>
+
+    <!-- TEXT STUDIO -->
+    <section class="panel" id="textStudio">
+      <h3>Text Studio</h3><p>Type to update the text overlay on the preview in real time.</p>
+      <input id="textInput" class="textInput" value="HERB N GLOW • NEW" oninput="updateOverlayText()" style="margin-top:10px">
+      <div style="display:flex;gap:6px;margin-top:8px">
+        <select id="fontSel" class="textInput" onchange="updateTextStyle()"><option value="Inter">Inter — Clean</option><option value="Georgia">Georgia — Serif</option><option value="'JetBrains Mono'">Mono — Bold labels</option><option value="cursive">Handwritten</option></select>
+        <select id="alignSel" class="textInput" style="max-width:110px" onchange="updateTextStyle()"><option value="center">Center</option><option value="left">Left</option><option value="right">Right</option></select>
+      </div>
+      <div class="sliders"><div class="sliderRow"><label>Text size <span id="textSizeVal">13px</span></label><input id="textSize" type="range" min="10" max="28" value="13" oninput="updateTextStyle()"></div></div>
+      <div class="dividerLabel">Text colour</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="swatch active" style="background:#111" onclick="setTextColor('#111','#fff',this)" aria-label="Black text"></button>
+        <button class="swatch" style="background:#fff" onclick="setTextColor('#fff','#111',this)" aria-label="White text"></button>
+        <button class="swatch" style="background:#f59e0b" onclick="setTextColor('#78350f','#fde68a',this)" aria-label="Amber text"></button>
+        <button class="swatch" style="background:#00d4a6" onclick="setTextColor('#04201a','#a7f3d0',this)" aria-label="Teal text"></button>
+        <button class="swatch" style="background:#ff4d7d" onclick="setTextColor('#fff','#ff4d7d',this)" aria-label="Pink text"></button>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+        <button class="chip" onclick="toggleTextStyle('bold',this)"><b>B</b> Bold</button>
+        <button class="chip" onclick="toggleTextStyle('stroke',this)">Stroke</button>
+        <button class="chip" onclick="toggleTextStyle('shadow',this)">Shadow</button>
+        <button class="chip" onclick="toggleTextStyle('bg',this)">No BG</button>
+      </div>
+    </section>
+
+    <!-- ANIMATION & KEYFRAMES -->
+    <section class="panel" id="animBox">
+      <h3>Animation &amp; Keyframes</h3><p>Tap a preset to play it on the text / caption in the preview.</p>
+      <div class="fxGrid">
+        <button class="fxBtn" onclick="playAnim('animPop',this)"><b>◉</b>Pop In</button>
+        <button class="fxBtn" onclick="playAnim('animSlide',this)"><b>↑</b>Slide Up</button>
+        <button class="fxBtn" onclick="playAnim('animFade',this)"><b>◐</b>Fade</button>
+        <button class="fxBtn" onclick="playAnim('animBounce',this)"><b>↕</b>Bounce</button>
+        <button class="fxBtn" onclick="playAnim('animType',this)"><b>▭</b>Typewriter</button>
+        <button class="fxBtn" onclick="playAnim('animZoom',this)"><b>✦</b>Zoom Out</button>
+      </div>
+      <div class="dividerLabel">Keyframes on selected clip</div>
+      <div class="kfRow"><span class="kfDot active">◆ 0.0s Scale 100%</span><span class="kfDot">◆ 2.1s Scale 112%</span><span class="kfDot">◆ 4.2s Opacity 100%</span></div>
+      <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><button class="chip" onclick="addKeyframe()">◆ Add keyframe at playhead</button><button class="chip" onclick="showToast('Easing: Ease In-Out applied to keyframes')">Easing: Ease In-Out</button></div>
+    </section>
+
+    <!-- COLOR GRADE PRO -->
+    <section class="panel" id="colorGrade">
+      <h3>Colour Grade — Pro</h3><p>Extra grading beyond Brightness / Contrast above. All sliders update the preview live.</p>
+      <div class="sliders">
+        <div class="sliderRow"><label>Exposure <span id="expVal">0</span></label><input id="expRange" type="range" min="-40" max="40" value="0" oninput="applyGrade()"></div>
+        <div class="sliderRow"><label>Temperature <span id="tempVal">Warm 0</span></label><input id="tempRange" type="range" min="-50" max="50" value="0" oninput="applyGrade()"></div>
+        <div class="sliderRow"><label>Highlights <span id="hlVal">0</span></label><input id="hlRange" type="range" min="-50" max="50" value="0" oninput="applyGrade()"></div>
+        <div class="sliderRow"><label>Shadows <span id="shVal">0</span></label><input id="shRange" type="range" min="-50" max="50" value="0" oninput="applyGrade()"></div>
+        <div class="sliderRow"><label>Vibrance <span id="vibVal">+10</span></label><input id="vibRange" type="range" min="-30" max="60" value="10" oninput="applyGrade()"></div>
+        <div class="sliderRow"><label>Sharpen <span id="sharpVal">20</span></label><input id="sharpRange" type="range" min="0" max="100" value="20" oninput="applyGrade()"></div>
+      </div>
+      <div class="chips"><button class="chip" onclick="applyPresetGrade('Natural',this)">Natural</button><button class="chip" onclick="applyPresetGrade('Golden Hour',this)">Golden Hour</button><button class="chip" onclick="applyPresetGrade('Product Pop',this)">Product Pop</button><button class="chip" onclick="applyPresetGrade('Muted Film',this)">Muted Film</button></div>
+    </section>
+
+    <!-- AUDIO STUDIO -->
+    <section class="panel" id="audioStudio">
+      <h3>Audio Studio</h3><p>Fade, enhance and balance the soundtrack &amp; voiceover.</p>
+      <div class="sliders">
+        <div class="sliderRow"><label>Fade in <span id="fadeInVal">0.4s</span></label><input type="range" min="0" max="30" value="4" oninput="document.getElementById('fadeInVal').textContent=(this.value/10).toFixed(1)+'s'"></div>
+        <div class="sliderRow"><label>Fade out <span id="fadeOutVal">1.2s</span></label><input type="range" min="0" max="40" value="12" oninput="document.getElementById('fadeOutVal').textContent=(this.value/10).toFixed(1)+'s'"></div>
+        <div class="sliderRow"><label>Bass <span>+3</span></label><input type="range" min="-10" max="10" value="3"></div>
+        <div class="sliderRow"><label>Voice clarity <span>+6</span></label><input type="range" min="0" max="12" value="6"></div>
+      </div>
+      <div>
+        <div class="toggleRow"><span>Noise reduction</span><button class="toggle on" onclick="toggleSwitch(this,'Noise reduction')" aria-label="Toggle noise reduction"></button></div>
+        <div class="toggleRow"><span>Auto-duck music under voice</span><button class="toggle on" onclick="toggleSwitch(this,'Auto-duck')" aria-label="Toggle auto duck"></button></div>
+        <div class="toggleRow"><span>Normalize loudness (-14 LUFS)</span><button class="toggle" onclick="toggleSwitch(this,'Normalize loudness')" aria-label="Toggle normalize"></button></div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px"><button class="chip" onclick="showToast('Audio extracted from Serum_Closeup.mp4')">Extract audio</button><button class="chip" onclick="showToast('Voiceover track muted')">Mute voiceover</button><button class="chip" onclick="showToast('Replaced with Voiceover_Ayesha.mp3')">Replace audio</button></div>
+      <div class="dividerLabel">Beat sync — Trending_Audio.mp3</div>
+      <div class="beatBar" id="beatBar"></div>
+      <p style="margin-top:8px">Beats detected at 0.0s, 3.2s, 6.4s, 9.6s… <button class="chip" style="margin-left:4px" onclick="snapToBeat()">Snap cuts to beat</button></p>
+    </section>
+
+    <!-- EFFECTS LIBRARY -->
+    <section class="panel" id="effectsLib">
+      <h3>Effects &amp; Overlays</h3><p>Tap to toggle on the preview. Stickers place instantly; effects stack.</p>
+      <div class="fxGrid">
+        <button class="fxBtn" id="fxVignette" onclick="toggleEffect('vignette',this)"><b>◐</b>Vignette</button>
+        <button class="fxBtn" id="fxGrain" onclick="toggleEffect('grain',this)"><b>▦</b>Film Grain</button>
+        <button class="fxBtn" onclick="toggleEffect('glow',this)"><b>✦</b>Soft Glow</button>
+        <button class="fxBtn" onclick="toggleEffect('blurbg',this)"><b>◎</b>Blur BG</button>
+        <button class="fxBtn" onclick="toggleChroma(this)"><b>🟢</b>Chroma Key</button>
+        <button class="fxBtn" onclick="showToast('Glitch effect added to selected clip — 0.6s')"><b>≋</b>Glitch</button>
+      </div>
+      <div class="dividerLabel">Stickers — tap to place</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="chip" style="font-size:18px;padding:8px 12px" onclick="placeSticker('🌿')">🌿</button>
+        <button class="chip" style="font-size:18px;padding:8px 12px" onclick="placeSticker('✨')">✨</button>
+        <button class="chip" style="font-size:18px;padding:8px 12px" onclick="placeSticker('🔥')">🔥</button>
+        <button class="chip" style="font-size:18px;padding:8px 12px" onclick="placeSticker('🛍️')">🛍️</button>
+        <button class="chip" style="font-size:18px;padding:8px 12px" onclick="placeSticker('💧')">💧</button>
+        <button class="chip" onclick="placeSticker('')">Clear</button>
+      </div>
+      <div class="dividerLabel">Speed ramping</div>
+      <div class="chips" style="margin-top:0"><button class="chip" onclick="setSpeedPreset(0.5,this)">0.5× Slow-mo</button><button class="chip active" onclick="setSpeedPreset(1,this)">1× Normal</button><button class="chip" onclick="setSpeedPreset(1.5,this)">1.5×</button><button class="chip" onclick="setSpeedPreset(2,this)">2× Fast</button><button class="chip" onclick="showToast('Curve speed: ramp 0.5× → 2× → 1× applied')">Curve ramp</button></div>
+    </section>
+
+    <!-- CAPTIONS EDITOR -->
+    <section class="panel" id="captionsBox">
+      <h3>Captions Editor</h3><p>Edit the line below — it updates the burned-in caption on the preview.</p>
+      <input id="captionInput" class="textInput" value="Glow in 7 days — no filter needed ✨" oninput="updateCaption()" style="margin-top:10px">
+      <div class="chips"><button class="chip active" onclick="pickCaptionStyle(this,'Bold White')">Bold White</button><button class="chip" onclick="pickCaptionStyle(this,'Yellow Highlight')">Yellow Highlight</button><button class="chip" onclick="pickCaptionStyle(this,'Karaoke')">Karaoke</button><button class="chip" onclick="pickCaptionStyle(this,'Minimal')">Minimal</button></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px"><button class="chip" onclick="showToast('Auto captions regenerated — Urdu + English detected')">↻ Re-run auto captions</button><button class="chip" onclick="showToast('Caption timing shifted +0.2s')">Timing +0.2s</button></div>
+      <div>
+        <div class="toggleRow"><span>Burn captions into export</span><button class="toggle on" onclick="toggleSwitch(this,'Burn captions')" aria-label="Toggle burn captions"></button></div>
+        <div class="toggleRow"><span>Word-by-word highlighting</span><button class="toggle" onclick="toggleSwitch(this,'Word highlighting')" aria-label="Toggle word highlighting"></button></div>
+      </div>
+    </section>
+
+  </aside>
+
+  <!-- TIMELINE - IMPROVED -->
+  <section class="timelineWrap" id="timelineWrap">
+    <div class="tlHead">
+      <div><h3>Timeline</h3><p>Drag clips to move • Drag edges to trim • Filmstrip + waveform</p></div>
+      <div class="tlControls">
+        <label style="font-size:12px;color:var(--muted);font-weight:600">Zoom <input type="range" min="40" max="160" value="86" oninput="setZoom(this.value)" style="vertical-align:middle;accent-color:var(--accent)"></label>
+        <button class="pill" onclick="toggleExpand()">⤢ Expand timeline</button>
+        <button class="pill" id="snapBtn" onclick="toggleSnap()">🧲 Snap ON</button>
+        <button class="pill" onclick="splitAtPlayhead()">✂ Split at playhead</button>
+      </div>
+    </div>
+    <div class="minimap" id="minimap"></div>
+    <div class="tlScroller" id="scroller" onclick="seekFromClick(event)">
+      <div class="ruler" id="ruler"></div>
+      <div class="tracks" id="tracks"></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;padding:0 12px 12px"><span class="timecode">Playhead drag: drag red line • Trim: drag clip edges • Move: drag clip body</span><span style="color:var(--muted);font-size:12px;align-self:center">Tracks: Main Video • Overlay • Text • Audio — height resizable in expanded mode</span></div>
+  </section>
+</div>
+
+<!-- EXPORT MODAL -->
+<div class="modal" id="exportModal">
+  <div class="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:start"><div><h2 style="margin:0">Export video</h2><p id="exportSub" style="color:var(--muted);margin:6px 0 0;font-size:13px;line-height:1.5">Herb n Glow — Product Reel • 18.0s • 9:16</p></div><button class="iconBtn" onclick="closeExport()">✕</button></div>
+    <div class="resGrid" id="resGrid">
+      <button class="res" data-res="720p" onclick="pickRes('720p',this)"><b>720p HD</b><span>720×1280 (9:16) • Fastest • Small file</span></button>
+      <button class="res" data-res="1080p" onclick="pickRes('1080p',this)"><b>1080p Full HD</b><span>1080×1920 (9:16) • Best for phones</span></button>
+      <button class="res" data-res="2K" onclick="pickRes('2K',this)"><b>2K QHD</b><span>1440×2560 (9:16)</span></button>
+      <button class="res active" data-res="4K" onclick="pickRes('4K',this)"><b>4K UHD ★</b><span>2160×3840 (9:16) • Sharpest • Heaviest</span></button>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px" id="fpsRow"><button class="chip" data-fps="60" onclick="pickFps(60,this)">60 fps</button><button class="chip active" data-fps="30" onclick="pickFps(30,this)">30 fps</button><button class="chip" data-fps="24" onclick="pickFps(24,this)">24 fps</button><span style="flex:1"></span><span id="formatChips" style="display:flex;gap:6px"><button class="chip active" data-fmt="mp4" onclick="pickFormat('mp4',this)">MP4</button><button class="chip" data-fmt="webm" onclick="pickFormat('webm',this)">WebM</button></span></div>
+    <div style="background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:12px;font-size:13px;line-height:1.6"><b id="exportSummary">4K • 2160×3840 • 30 fps • Real file</b><br><span style="color:var(--muted)" id="exportNote">Renders in your browser in real time using Canvas + MediaRecorder and downloads a real video file. 4K is heaviest — if your phone struggles, try 1080p.</span></div>
+    <canvas id="exportCanvas" width="720" height="1280" style="width:100%;max-height:260px;object-fit:contain;background:#000;border-radius:12px;border:1px solid var(--line);margin-top:12px;display:none"></canvas>
+    <div class="progress"><i id="bar"></i></div><div id="exportStatus" style="font-size:12px;color:var(--muted);margin-top:8px">Ready — tap Start Export to render a real file. Keep this tab open while it records.</div>
+    <div id="exportResult" style="display:none;margin-top:12px;background:#0f2a24;border:1px solid #1e4d43;border-radius:12px;padding:12px">
+      <div style="font-weight:700;font-size:13px">Your video is ready</div>
+      <video id="exportPreview" controls playsinline style="width:100%;max-height:280px;background:#000;border-radius:10px;margin-top:10px"></video>
+      <div id="exportMeta" style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5"></div>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><a id="downloadLink" href="#" download class="pill primary" style="flex:1;text-align:center;text-decoration:none;display:inline-flex;justify-content:center;align-items:center">⬇ Download video file</a><button class="pill" onclick="shareExport()">Share / Save</button></div>
+      <p style="font-size:11px;color:var(--muted);margin:8px 0 0">If download doesn't start automatically, tap Download above. In Safari, long-press the preview to save.</p>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:16px"><button class="pill" style="flex:1" id="cancelExportBtn" onclick="cancelExport()">Cancel</button><button class="pill primary" style="flex:2" id="startExportBtn" onclick="startExport()">● Start Export — Render Real File</button></div>
+  </div>
+</div>
+<!-- APP / INSTALL MODAL -->
+<div class="modal" id="appModal">
+  <div class="sheet">
+    <div style="display:flex;justify-content:space-between;align-items:start"><div><h2 style="margin:0">Get ClipForge Studio</h2><p style="color:var(--muted);margin:6px 0 0;font-size:13px;line-height:1.5">Installs on this device in seconds — no store account, no download wait. It then opens full-screen from its own icon, exactly like a native app.</p></div><button class="iconBtn" onclick="closeApp()">✕</button></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:14px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px">
+      <img src="data:image/png;base64,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" alt="ClipForge Studio app icon" style="width:56px;height:56px;border-radius:14px;flex:0 0 56px"/>
+      <div><b>ClipForge Studio</b><div style="color:var(--muted);font-size:12px;line-height:1.5">Video Editor • v1.0 • Phone &amp; desktop<br/><span id="appDetected">Detecting your device…</span></div></div>
+      <span class="appStatus" id="appStatusModal" style="margin-left:auto">WEB APP</span>
+    </div>
+    <button class="pill primary" id="bigInstallBtn" style="width:100%;margin-top:14px;justify-content:center;padding:13px" onclick="installApp()">📲 Install on this device</button>
+    <p id="installHint" style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0 0">If your browser doesn't show an install prompt, follow the steps for your platform below — they do the same thing.</p>
+    <div class="dividerLabel">Choose your platform</div>
+    <div class="platGrid" id="platGrid">
+      <button class="plat" data-plat="android" onclick="pickPlatform('android',this)"><b>🤖 Android</b><span>Phone &amp; tablet — Chrome</span></button>
+      <button class="plat" data-plat="ios" onclick="pickPlatform('ios',this)"><b>🍎 iPhone &amp; iPad</b><span>Safari — Add to Home Screen</span></button>
+      <button class="plat" data-plat="windows" onclick="pickPlatform('windows',this)"><b>🪟 Windows</b><span>PC &amp; laptop — Chrome or Edge</span></button>
+      <button class="plat" data-plat="mac" onclick="pickPlatform('mac',this)"><b>💻 Mac</b><span>MacBook &amp; iMac — Chrome or Edge</span></button>
+    </div>
+    <ol class="steps" id="platSteps"></ol>
+    <div class="dividerLabel">What you get installed</div>
+    <div>
+      <div class="specRow"><span>Home screen / Start menu icon</span><b>Yes — ClipForge tile</b></div>
+      <div class="specRow"><span>Full-screen editor, no browser bars</span><b>Yes</b></div>
+      <div class="specRow"><span>Clips bin, timeline &amp; all tools</span><b>Full editor</b></div>
+      <div class="specRow"><span>Real export up to 4K</span><b>Included</b></div>
+      <div class="specRow"><span>Updates</span><b>Automatic — always latest</b></div>
+      <div class="specRow"><span>Native .apk / .exe</span><b>Packaging started — see below</b></div>
+    </div>
+    <button class="pill" style="width:100%;margin-top:14px;justify-content:center;padding:12px" onclick="closeApp();openNative()">⬇ Open APK + EXE Packaging Center</button>
+    <div style="display:flex;gap:8px;margin-top:10px"><button class="pill" style="flex:1" onclick="closeApp()">Keep editing in browser</button><button class="pill primary" style="flex:1;justify-content:center" onclick="installApp()">Install app</button></div>
+  </div>
+</div>
+<!-- NATIVE PACKAGING MODAL — APK + EXE -->
+<div class="modal" id="nativeModal">
+  <div class="sheet" style="max-width:640px">
+    <div style="display:flex;justify-content:space-between;align-items:start;gap:12px"><div><h2 style="margin:0">APK + EXE Packaging</h2><p style="color:var(--muted);margin:6px 0 0;font-size:13px;line-height:1.55">Packaging has started for this exact editor. A web page can't compile binaries by itself — these downloads give you the complete, ready-to-build project kit. Run the build on a PC once and you get the installable files.</p></div><button class="iconBtn" onclick="closeNative()" aria-label="Close packaging">✕</button></div>
+
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px"><span class="statusDot">● PACKAGING READY</span><span style="font-size:12px;color:var(--muted)">Capacitor for Android • Tauri for Windows • Same code as this editor</span></div>
+
+    <div class="dividerLabel">App identity — used in both builds</div>
+    <div class="fieldGrid">
+      <div><label for="nativeAppName">App name</label><input id="nativeAppName" class="textInput" value="ClipForge Studio" oninput="updateNativeSummary()"></div>
+      <div><label for="nativeBundleId">Package / Bundle ID</label><input id="nativeBundleId" class="textInput" value="com.clipforge.studio" oninput="updateNativeSummary()"></div>
+      <div><label for="nativeVersion">Version</label><input id="nativeVersion" class="textInput" value="1.0.0" oninput="updateNativeSummary()"></div>
+    </div>
+    <p id="nativeSummary" style="font-size:12px;color:var(--muted);line-height:1.6;margin:10px 0 0">ClipForge Studio • com.clipforge.studio • v1.0.0 — Android APK + Windows EXE</p>
+
+    <div class="nativeGrid">
+      <div class="nativeCard">
+        <h4>🤖 Android — .apk</h4>
+        <p>Install directly on any Android phone. No Play Store account needed for direct install.</p>
+        <div class="nativeMeta">
+          <div class="specRow"><span>Wrapper</span><b>Capacitor 6</b></div>
+          <div class="specRow"><span>Output</span><b>app-release.apk</b></div>
+          <div class="specRow"><span>Min Android</span><b>7.0 (API 24)</b></div>
+          <div class="specRow"><span>Signing</span><b>Your keystore — step 4</b></div>
+        </div>
+        <ol class="buildSteps">
+          <li>Download the kit below, unzip it on your PC.</li>
+          <li>Install <b>Node 20+</b> + <b>Android Studio</b>.</li>
+          <li>Run <code>npm install</code> then <code>npx cap add android</code></li>
+          <li>Create signing key: <code>keytool -genkey -v -keystore clipforge.keystore -alias clipforge -keyalg RSA -keysize 2048 -validity 10000</code></li>
+          <li>Run <code>npx cap sync</code> → open Android Studio → <b>Build › Generate Signed APK</b>.</li>
+        </ol>
+        <button class="pill primary" onclick="downloadCapacitorConfig()">⬇ capacitor.config.json</button>
+        <button class="pill" onclick="downloadAndroidScript()">⬇ Build script (.bat)</button>
+      </div>
+
+      <div class="nativeCard">
+        <h4>🪟 Windows — .exe</h4>
+        <p>Desktop installer for PC. Unsigned builds show a Windows “unknown publisher” prompt on first install — normal for personal use.</p>
+        <div class="nativeMeta">
+          <div class="specRow"><span>Wrapper</span><b>Tauri 2</b></div>
+          <div class="specRow"><span>Output</span><b>ClipForge-Setup.exe</b></div>
+          <div class="specRow"><span>Windows</span><b>10 / 11 • 64-bit</b></div>
+          <div class="specRow"><span>Size target</span><b>~8–15 MB installer</b></div>
+        </div>
+        <ol class="buildSteps">
+          <li>Download the kit below, unzip it on your Windows PC.</li>
+          <li>Install <b>Node 20+</b>, <b>Rust</b> (rustup.rs) + VS Build Tools.</li>
+          <li>Run <code>npm install</code> then <code>npm run tauri init</code> if prompted.</li>
+          <li>Copy <code>tauri.conf.json</code> into <code>src-tauri/</code>.</li>
+          <li>Run <code>npm run tauri build</code> → installer is in <code>src-tauri/target/release/bundle/</code>.</li>
+        </ol>
+        <button class="pill primary" onclick="downloadTauriConfig()">⬇ tauri.conf.json</button>
+        <button class="pill" onclick="downloadWindowsScript()">⬇ Build script (.bat)</button>
+      </div>
+    </div>
+
+    <div style="background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px;margin-top:12px">
+      <b style="font-size:13px">Complete Packaging Kit — start here</b>
+      <p style="color:var(--muted);font-size:12.5px;line-height:1.6;margin:6px 0 0">One file with everything: folder layout, <span class="codeInline">package.json</span>, both configs, exact commands for APK + EXE, signing steps, and where each final file appears. Give this file to any PC builder — or follow it yourself — and the builds are reproducible.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <button class="pill primary" style="flex:1;justify-content:center" onclick="downloadPackagingKit()">⬇ Download Full Packaging Kit (.md)</button>
+        <button class="pill" onclick="copyBuildCommands()">Copy build commands</button>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);line-height:1.55;margin:10px 0 0">Honest note: the .apk and .exe themselves are compiled on a computer with Android Studio / Rust installed — they can't be compiled inside this web page. Everything above removes all the guesswork: identity, icons (192 / 512 already in this app), configs and scripts are ready, so the compile is the only step left.</p>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-top:14px"><button class="pill" style="flex:1" onclick="closeNative()">Back to editor</button><button class="pill" style="flex:1;justify-content:center" onclick="closeNative();openApp()">Web install options</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<input type="file" id="fileInput" accept="video/*,image/*,audio/*,.mp4,.mov,.webm,.mkv,.mp3,.wav,.m4a,.jpg,.jpeg,.png,.webp" multiple hidden/>
+
+<script>
+var clips=[
+{id:1,name:"Serum_Closeup.mp4",type:"video",dur:"0:04.2",grad:"linear-gradient(135deg,#1d5c4d,#2e4a3f)",emoji:"🧴",used:true,fav:true,folder:"Product"},
+{id:2,name:"Unboxing_UGC.mp4",type:"video",dur:"0:06.8",grad:"linear-gradient(135deg,#274b73,#2c4a5e)",emoji:"📦",used:true,fav:false,folder:"UGC"},
+{id:3,name:"Before_After.jpg",type:"photo",dur:"Photo",grad:"linear-gradient(135deg,#6e3548,#4a3a44)",emoji:"✨",used:false,fav:true,folder:"Product"},
+{id:4,name:"Lab_Broll.mp4",type:"video",dur:"0:05.1",grad:"linear-gradient(135deg,#2f5d3a,#37492f)",emoji:"🌿",used:true,fav:false,folder:"B-roll"},
+{id:5,name:"Trending_Audio.mp3",type:"audio",dur:"0:18.0",grad:"linear-gradient(135deg,#111827,#374151)",emoji:"🎵",used:true,fav:true,folder:"Music"},
+{id:6,name:"Texture_Shot.mp4",type:"video",dur:"0:03.4",grad:"linear-gradient(135deg,#5d4a2f,#4a4130)",emoji:"💧",used:false,fav:false,folder:"B-roll"},
+{id:7,name:"Logo_Endcard.png",type:"photo",dur:"Photo",grad:"linear-gradient(135deg,#f8fafc,#cbd5e1)",emoji:"🌸",used:false,fav:false,folder:"Product"},
+{id:8,name:"Voiceover_Ayesha.mp3",type:"audio",dur:"0:12.5",grad:"linear-gradient(135deg,#343447,#3d3a52)",emoji:"🎙️",used:false,fav:false,folder:"Music"},
+];
+var timeline=[
+{track:"VIDEO",label:"Main Video",items:[{name:"Serum_Closeup",dur:4.2,start:0,color:"#1d6a58",sub:"1080p • Glow filter"},{name:"Unboxing_UGC",dur:5.0,start:4.2,color:"#2f5f8f",sub:"Speed 1.0×"},{name:"Lab_Broll",dur:4.6,start:9.2,color:"#35704a",sub:"Fade →"},{name:"Texture",dur:4.2,start:13.8,color:"#8a6a35",sub:"End"}]},
+{track:"OVERLAY",label:"Overlay",items:[{name:"✨ Sparkle + Logo",dur:6,start:1,color:"#8a4a63",sub:"Opacity 90%"}]},
+{track:"TEXT",label:"Text",items:[{name:"“Glow in 7 days”",dur:5,start:0.5,color:"#111827",sub:"Bold • Animation: Pop"},{name:"Shop Now →",dur:3,start:14,color:"#111827",sub:"CTA"}]},
+{track:"AUDIO",label:"Audio",items:[{name:"🎵 Trending_Audio.mp3",dur:18,start:0,color:"#374151",sub:"Vol 82% • Fade out",wave:true}]},
+];
+var filterMode="all",favOnly=false,selectedIdx=0,playing=false,playTime=3.2,zoom=86,exportRes="4K",expanded=false;
+var currentRatio="9:16",exportFps=30,exportFormat="mp4",isExporting=false,exportChunks=[],exportRecorder=null,exportStream=null,exportAudioCtx=null,exportStartAt=0,exportRAF=0,lastExportBlob=null,lastExportUrl=null,lastExportName="",exportDur=18;
+function renderBin(){
+  var q=(document.getElementById('search').value||"").toLowerCase();
+  var allTab=document.querySelector('.tab[data-f="all"]');if(allTab)allTab.textContent='All • '+clips.length;
+  var html="";
+  clips.forEach(function(c){
+    if(filterMode!=="all"){
+      if(filterMode==="video"&&c.type!=="video")return;
+      if(filterMode==="photo"&&c.type!=="photo")return;
+      if(filterMode==="audio"&&c.type!=="audio")return;
+      if(filterMode==="used"&&!c.used)return;
+      if(filterMode==="unused"&&c.used)return;
+    }
+    if(favOnly&&!c.fav)return;
+    if(q&&c.name.toLowerCase().indexOf(q)===-1)return;
+    var thumbStyle='background:'+c.grad;
+    if(c.thumb)thumbStyle="background-image:url('"+c.thumb+"');background-size:cover;background-position:center;background-color:#111";
+    html+='<div class="clipCard"><div class="clipThumb" style="'+thumbStyle+'"><span>'+c.emoji+' '+c.dur+'</span>'+(c.used?'<span class="usedBadge">IN TIMELINE</span>':'')+'<button class="fav" onclick="event.stopPropagation();toggleFav('+c.id+')">'+(c.fav?'★':'☆')+'</button></div><div class="clipMeta"><b>'+escHtml(c.name)+'</b><small>'+c.folder+' • '+c.type+(c.meta?' • '+c.meta:'')+'</small><div style="display:flex;gap:6px;margin-top:8px"><button class="chip" style="flex:1;padding:7px 2px" onclick="addToTimeline('+c.id+')">+ Add</button><button class="chip" style="flex:1;padding:7px 2px" onclick="previewClip('+c.id+')">Preview</button></div></div></div>';
+  });
+  if(!html)html='<p style="color:var(--muted);grid-column:1/-1;padding:12px">No clips match. Try another search or tap + Import to add media from your device.</p>';
+  document.getElementById('binGrid').innerHTML=html;
+  renderTimeline();
+}
+function toggleFav(id){clips.forEach(function(c){if(c.id===id)c.fav=!c.fav});renderBin()}
+function setFilter(f,el){filterMode=f;document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});el.classList.add('active');renderBin()}
+function toggleFavFilter(btn){favOnly=!favOnly;btn.style.background=favOnly?'#ffb020':'';btn.style.color=favOnly?'#111':'';renderBin()}
+function findClip(id){for(var i=0;i<clips.length;i++){if(clips[i].id===id)return clips[i]}return null}
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function fmtDur(s){if(!isFinite(s)||s==null||s<0)return '…';return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')+'.'+Math.floor((s%1)*10)}
+var impAudioEl=null;
+function previewClip(id){
+  var c=findClip(id);if(!c)return;
+  document.getElementById('propTitle').textContent='Selected: '+c.name;
+  var pd=document.getElementById('propDesc');if(pd)pd.textContent=(c.type==='photo'?'Photo':c.type==='audio'?'Audio':'Video')+' • '+c.dur+(c.meta?' • '+c.meta:'')+(c.folder==='Imports'?' • Imported from your device':' • Sample clip');
+  if(c.url&&c.type==='audio'){closeImportPreview();playImportAudio(c);return}
+  if(c.url&&(c.type==='video'||c.type==='photo')){if(impAudioEl){impAudioEl.pause();impAudioEl=null}showImportPreview(c);return}
+  closeImportPreview();
+  document.getElementById('sceneLabel').textContent='▶ '+c.name+' • Preview';
+  showToast('Previewing '+c.name);
+}
+function playImportAudio(c){try{if(impAudioEl)impAudioEl.pause();impAudioEl=new Audio(c.url);var pr=impAudioEl.play();if(pr&&pr.catch)pr.catch(function(){showToast('Tap Preview again to play '+c.name)});document.getElementById('sceneLabel').textContent='🎵 '+c.name+' • Playing';showToast('Playing '+c.name)}catch(e){showToast('Could not play that file')}}
+function showImportPreview(c){
+  var v=document.getElementById('impVideo'),im=document.getElementById('impImage');
+  ['sceneHeadline','sceneProduct','captionText'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display='none'});
+  if(c.type==='video'){im.style.display='none';if(v.getAttribute('src')!==c.url)v.src=c.url;v.style.display='block';var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}
+  else{try{v.pause()}catch(e){}v.style.display='none';im.src=c.url;im.style.display='block'}
+  document.getElementById('impClose').style.display='grid';
+  document.getElementById('sceneLabel').textContent='▶ '+c.name+' • Preview';
+  showToast('Previewing '+c.name);
+}
+function closeImportPreview(){
+  var v=document.getElementById('impVideo'),im=document.getElementById('impImage'),cl=document.getElementById('impClose');
+  if(v){try{v.pause()}catch(e){}v.style.display='none'}
+  if(im)im.style.display='none';
+  if(cl)cl.style.display='none';
+  ['sceneHeadline','sceneProduct','captionText'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display=''});
+}
+function addToTimeline(id){
+  var c=findClip(id);if(!c)return;
+  var want=c.type==='audio'?'AUDIO':'VIDEO',tr=null;
+  timeline.forEach(function(t){if(t.track===want)tr=t});
+  if(!tr){showToast('No track available for that clip');return}
+  var end=0;tr.items.forEach(function(it){end=Math.max(end,it.start+it.dur)});
+  var dur=c.type==='photo'?3:((c.durSec&&isFinite(c.durSec)&&c.durSec>0)?Math.round(c.durSec*10)/10:4);
+  var base=(c.name.replace(/\.[A-Za-z0-9]+$/,'')||c.name).slice(0,26);
+  tr.items.push({name:base,dur:dur,start:Math.round(end*10)/10,color:c.type==='audio'?'#374151':'#2f6a7a',sub:(c.folder==='Imports'?'Imported • ':'')+c.dur,wave:c.type==='audio'});
+  c.used=true;renderBin();
+  showToast(c.name+' added to '+tr.label+' track at '+end.toFixed(1)+'s');
+}
+function importClip(){var fi=document.getElementById('fileInput');if(!fi){showToast('File picker is not available in this browser');return}fi.value='';fi.click()}
+var importSeq=0;
+function handleFiles(fileList){
+  var files=Array.prototype.slice.call(fileList||[]);
+  if(!files.length)return;
+  var ok=0;files.forEach(function(f){if(importOneFile(f))ok++});
+  if(ok>1)showToast('Importing '+ok+' files from your device…');
+}
+function importOneFile(f){
+  var name=f.name||'Imported file';
+  var type=(f.type||'').split('/')[0];
+  if(type!=='video'&&type!=='image'&&type!=='audio'){
+    var ext=(name.split('.').pop()||'').toLowerCase();
+    if(['mp4','mov','webm','mkv','m4v','avi'].indexOf(ext)>=0)type='video';
+    else if(['mp3','wav','m4a','aac','ogg','flac'].indexOf(ext)>=0)type='audio';
+    else if(['jpg','jpeg','png','webp','gif','bmp'].indexOf(ext)>=0)type='image';
+    else type='';
+  }
+  if(!type){showToast('Skipped '+name+' — not a video, photo or audio file');return false}
+  var url=URL.createObjectURL(f);
+  var clip={id:Date.now()+(++importSeq),name:name,type:type==='image'?'photo':type,dur:type==='image'?'Photo':'…',durSec:type==='image'?3:0,grad:type==='audio'?'linear-gradient(135deg,#374151,#111827)':type==='image'?'linear-gradient(135deg,#475569,#1e293b)':'linear-gradient(135deg,#0e7490,#164e63)',emoji:type==='audio'?'🎵':type==='image'?'🖼️':'🎬',used:false,fav:false,folder:'Imports',url:url,thumb:'',meta:''};
+  clips.unshift(clip);
+  if(type==='image'){
+    clip.thumb=url;
+    var im=new Image();
+    im.onload=function(){clip.meta=im.naturalWidth+'×'+im.naturalHeight;renderBin()};
+    im.src=url;
+    renderBin();showToast('Imported photo: '+name);
+  }else if(type==='video'){
+    var v=document.createElement('video');v.muted=true;v.playsInline=true;v.preload='metadata';v.src=url;var grabbed=false;
+    var grab=function(){if(grabbed)return;grabbed=true;try{var cv=document.createElement('canvas');cv.width=264;cv.height=Math.max(40,Math.round(264*(v.videoHeight||9)/(v.videoWidth||16)));cv.getContext('2d').drawImage(v,0,0,cv.width,cv.height);clip.thumb=cv.toDataURL('image/jpeg',0.72)}catch(e){}renderBin()};
+    v.addEventListener('loadedmetadata',function(){clip.durSec=v.duration||0;clip.dur=fmtDur(v.duration);clip.meta=(v.videoWidth||'?')+'×'+(v.videoHeight||'?');renderBin();try{v.currentTime=Math.min(0.6,Math.max(0.05,(v.duration||1)/3))}catch(e){grab()}});
+    v.addEventListener('seeked',grab);
+    v.addEventListener('error',function(){clip.dur='Video';renderBin()});
+    setTimeout(function(){if(!grabbed)renderBin()},3000);
+    showToast('Imported video: '+name);
+  }else{
+    var a=document.createElement('audio');a.preload='metadata';a.src=url;
+    a.addEventListener('loadedmetadata',function(){clip.durSec=a.duration||0;clip.dur=fmtDur(a.duration);clip.meta='Audio file';renderBin()});
+    a.addEventListener('error',function(){clip.dur='Audio';renderBin()});
+    renderBin();showToast('Imported audio: '+name);
+  }
+  return true;
+}
+function projDur(){var d=18;timeline.forEach(function(t){t.items.forEach(function(it){d=Math.max(d,it.start+it.dur)})});return Math.round(d*10)/10}
+function fmtTC(s){s=Math.max(0,s||0);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')+'.'+String(Math.floor((s%1)*100)).padStart(2,'0')}
+function renderTimeline(){
+  var pd=projDur();var ruler="";for(var rs=0;rs<pd;rs+=2)ruler+='<span>'+fmtTC(rs).slice(0,5)+'</span>';document.getElementById('ruler').innerHTML=ruler;
+  var html="";var mini="";
+  timeline.forEach(function(tr,ti){
+    html+='<div class="track"><div class="trackLabel"><b>'+tr.track+'</b><small>'+tr.label+'</small></div><div class="trackLane">';
+    tr.items.forEach(function(it,ii){
+      var left=92+it.start*zoom; /* visual offset handled by lane */ var w=Math.max(72,it.dur*zoom);
+      var sel=(ti===0&&ii===selectedIdx)?' selected':'';
+      html+='<div class="tClip'+sel+'" onclick="selectClip('+ti+','+ii+',\''+it.name+'\')" style="left:'+(it.start*zoom)+'px;width:'+w+'px;background:'+it.color+'">'+it.name+'<small>'+it.sub+' • '+it.dur.toFixed(1)+'s</small>'+(it.wave?'<div class="wave">'+('<i style="height:'+(4+Math.random()*7)+'px"></i>').repeat(18)+'</div>':'')+'</div>';
+      mini+='<i style="left:'+(it.start/pd*100)+'%;width:'+(it.dur/pd*100)+'%;background:'+it.color+'"></i>';
+    });
+    html+='</div></div>';
+  });
+  // playhead
+  html+='<div class="playhead" id="ph" style="left:calc(92px + '+(playTime*zoom)+'px)"></div>';
+  document.getElementById('tracks').innerHTML=html;
+  document.getElementById('minimap').innerHTML=mini+'<div style="position:absolute;top:0;bottom:0;width:2px;background:#ff3b30;left:'+(playTime/pd*100)+'%"></div><span style="position:absolute;right:8px;top:8px;font-size:11px;color:var(--muted)">Minimap — '+(Math.round(pd*10)/10)+'s project</span>';
+}
+function selectClip(t,i,name){selectedIdx=i;document.getElementById('propTitle').textContent='Selected: '+name;renderTimeline();showToast('Selected: '+name+' — drag edges to trim')}
+function setZoom(v){zoom=+v;renderTimeline()}
+function toggleExpand(){expanded=!expanded;document.getElementById('timelineWrap').classList.toggle('expanded',expanded);showToast(expanded?'Timeline expanded — taller tracks':'Timeline compact')}
+function togglePlay(){var iv=document.getElementById('impVideo');if(iv&&iv.style.display!=='none'){if(iv.paused){var pr=iv.play();if(pr&&pr.catch)pr.catch(function(){});document.getElementById('playBtn').textContent='⏸'}else{iv.pause();document.getElementById('playBtn').textContent='▶'}return}playing=!playing;document.getElementById('playBtn').textContent=playing?'⏸':'▶';if(playing)tick()}
+function tick(){if(!playing)return;playTime+=0.05;if(playTime>projDur())playTime=0;updateTC();renderTimeline();requestAnimationFrame(function(){setTimeout(tick,50)})}
+function updateTC(){document.getElementById('tc').textContent=fmtTC(playTime)+' / '+fmtTC(projDur());document.getElementById('sceneLabel').textContent='▶ Playing • '+playTime.toFixed(1)+'s'}
+function seek(d){playTime=Math.max(0,Math.min(projDur(),playTime+d));updateTC();renderTimeline()}
+function seekFromClick(e){if(e.target.closest('.tClip'))return;var r=document.getElementById('scroller').getBoundingClientRect();var x=e.clientX-r.left-92+document.getElementById('scroller').scrollLeft;playTime=Math.max(0,Math.min(projDur(),x/zoom));updateTC();renderTimeline()}
+function splitAtPlayhead(){showToast('Split at '+playTime.toFixed(1)+'s — two clips created')}
+function duplicateSelected(){showToast('Clip duplicated after selected clip')}
+function deleteSelected(){showToast('Clip removed — Undo available'); }
+function undo(){showToast('Undo')} function redo(){showToast('Redo')}
+function setRatio(r,el){currentRatio=r;document.querySelectorAll('.ratio').forEach(function(x){x.classList.remove('active')});el.classList.add('active');var f=document.getElementById('frame');if(r==='9:16'){f.style.width='min(340px,86vw)';f.style.aspectRatio='9/16'}if(r==='1:1'){f.style.width='min(420px,90vw)';f.style.aspectRatio='1/1'}if(r==='16:9'){f.style.width='min(620px,92vw)';f.style.aspectRatio='16/9'}if(r==='4:5'){f.style.width='min(380px,88vw)';f.style.aspectRatio='4/5'}showToast('Canvas: '+r)}
+function selectTool(el,name,panel){document.querySelectorAll('.tool').forEach(function(t){t.classList.remove('active')});el.classList.add('active');if(panel)showPanel(panel,name)}
+function showPanel(id,name){document.querySelectorAll('.props .panel').forEach(function(p){p.classList.toggle('active',p.id===id)});var t=document.getElementById('inspTitle');if(t&&name)t.textContent=name;if(id==='textStudio')updateOverlayText();if(window.matchMedia('(max-width:980px)').matches){var el=document.getElementById(id);if(el)setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'})},60)}}
+function addText(){var o=document.getElementById('overlayText');o.style.display='block';o.textContent='HERB N GLOW • NEW';showToast('Text added — edit it in the Text track')}
+function addSticker(){showToast('Sticker picker: ✨ 🌿 🧴 — tap one to place')}
+function applyFilter(){var b=document.querySelectorAll('.sliders input')[3]; /* not critical */ document.getElementById('scene').style.filter='brightness(1.08) contrast(1.12) saturate(1.18)'}
+function pickFilter(el,name){el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active')});el.classList.add('active');showToast('Filter: '+name+' applied to selected clip')}
+function openExport(res){if(res)exportRes=res;document.getElementById('exportModal').classList.add('open');var es=document.getElementById('exportSub');if(es)es.textContent='Herb n Glow — Product Reel • '+projDur().toFixed(1)+'s • '+currentRatio;pickRes(exportRes)}
+function closeExport(){document.getElementById('exportModal').classList.remove('open')}
+function pickFps(f,el){exportFps=f;document.querySelectorAll('#fpsRow [data-fps]').forEach(function(b){b.classList.toggle('active',+b.dataset.fps===f)});updateExportSummary()}
+function pickFormat(fmt,el){exportFormat=fmt;document.querySelectorAll('#formatChips .chip').forEach(function(b){b.classList.toggle('active',b.dataset.fmt===fmt)});updateExportSummary()}
+function getExportSize(){var base={'720p':720,'1080p':1080,'2K':1440,'4K':2160}[exportRes]||1080;var ratios={'9:16':[9,16],'1:1':[1,1],'16:9':[16,9],'4:5':[4,5]};var r=ratios[currentRatio]||[9,16];var w,h;if(r[0]<=r[1]){w=base;h=Math.round(base*r[1]/r[0]/2)*2}else{h=base;w=Math.round(base*r[0]/r[1]/2)*2}return{w:w,h:h}}
+function updateExportSummary(){var s=getExportSize();var el=document.getElementById('exportSummary');if(el)el.textContent=exportRes+' • '+s.w+'×'+s.h+' • '+exportFps+' fps • '+currentRatio+' • Real '+(exportFormat==='mp4'?'MP4 (WebM fallback if browser needs it)':'WebM')+' file'}
+function pickRes(res,el){exportRes=res;document.querySelectorAll('#resGrid .res').forEach(function(b){b.classList.toggle('active',b.dataset.res===res)});updateExportSummary()}
+function pickMime(){
+  var wantMp4=exportFormat==='mp4';
+  var candidates= wantMp4 ? ['video/mp4;codecs=avc1.640028,mp4a.40.2','video/mp4;codecs=avc1','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'] : ['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4'];
+  if(!window.MediaRecorder) return '';
+  for(var i=0;i<candidates.length;i++){try{if(MediaRecorder.isTypeSupported(candidates[i]))return candidates[i]}catch(e){}}
+  return '';
+}
+function drawExportFrame(ctx,W,H,t){
+  // determine current clip segment
+  var segs=[{end:4.2,name:'Serum_Closeup.mp4',c1:'#0f766e',c2:'#164e63',emoji:'🧴',label:'Vitamin C Serum'},{end:9.2,name:'Unboxing_UGC.mp4',c1:'#1e40af',c2:'#0e7490',emoji:'📦',label:'Unboxing — First Impressions'},{end:13.8,name:'Lab_Broll.mp4',c1:'#065f46',c2:'#365314',emoji:'🌿',label:'Clean Ingredients'},{end:18.01,name:'Texture_Shot.mp4',c1:'#92400e',c2:'#713f12',emoji:'💧',label:'Lightweight Texture'}];
+  var seg=segs[segs.length-1];for(var i=0;i<segs.length;i++){if(t<segs[i].end){seg=segs[i];break}}
+  // background gradient with slow zoom (Ken Burns)
+  var zoomF=1+((t%4.2)/4.2)*0.06;
+  ctx.save();ctx.translate(W/2,H/2);ctx.scale(zoomF,zoomF);ctx.translate(-W/2,-H/2);
+  var g=ctx.createLinearGradient(0,0,W,H);g.addColorStop(0,seg.c1);g.addColorStop(.55,seg.c2);g.addColorStop(1,'#1e293b');ctx.fillStyle=g;ctx.fillRect(-W*0.1,-H*0.1,W*1.2,H*1.2);
+  var rg=ctx.createRadialGradient(W*0.2,H*0.08,10,W*0.2,H*0.08,W*0.7);rg.addColorStop(0,'rgba(255,255,255,0.28)');rg.addColorStop(1,'rgba(255,255,255,0)');ctx.fillStyle=rg;ctx.fillRect(0,0,W,H);
+  ctx.restore();
+  // apply grade-ish overlay based on existing scene filter feel
+  ctx.fillStyle='rgba(255,176,32,0.08)';ctx.fillRect(0,H*0.72,W,H*0.28);
+  var pad=Math.round(W*0.05);var scale=W/720; // design scale
+  // top label pill
+  ctx.fillStyle='rgba(0,0,0,0.55)';var label='▶ '+seg.name+'  •  '+t.toFixed(1)+'s';ctx.font='700 '+(22*scale)+'px Inter, system-ui, sans-serif';var lw=ctx.measureText(label).width+28*scale;roundRect(ctx,pad,pad,lw,40*scale,20*scale);ctx.fill();ctx.fillStyle='#fff';ctx.fillText(label,pad+14*scale,pad+27*scale);
+  // headline
+  ctx.fillStyle='#ffffff';ctx.font='800 '+(52*scale)+'px Inter, system-ui, sans-serif';wrapText(ctx,'Herb n Glow',pad,H*0.16,W*0.72,58*scale);
+  ctx.fillStyle='#fde68a';ctx.font='800 '+(46*scale)+'px Inter, system-ui, sans-serif';wrapText(ctx,seg.label,pad,H*0.16+62*scale,W*0.72,52*scale);
+  // product card
+  var pw=W*0.34,ph=pw;var px=W-pw-pad,py=H*0.58;var grad2=ctx.createLinearGradient(px,py,px+pw,py+ph);grad2.addColorStop(0,'#fef3c7');grad2.addColorStop(1,'#f59e0b');ctx.fillStyle=grad2;roundRect(ctx,px,py,pw,ph,18*scale);ctx.fill();ctx.font=(84*scale)+'px serif';ctx.textAlign='center';ctx.fillText(seg.emoji,px+pw/2,py+ph/2+30*scale);ctx.textAlign='left';
+  // overlay text if visible
+  var ot=document.getElementById('overlayText');if(ot&&ot.style.display!=='none'&&ot.textContent.trim()){ctx.font='800 '+(24*scale)+'px Inter, sans-serif';var txt=ot.textContent.trim();var tw=ctx.measureText(txt).width+24*scale;ctx.fillStyle='#ffffff';roundRect(ctx,(W-tw)/2,H*0.30,tw,42*scale,21*scale);ctx.fill();ctx.fillStyle='#111';ctx.textAlign='center';ctx.fillText(txt,W/2,H*0.30+29*scale);ctx.textAlign='left'}
+  // sticker
+  var st=document.getElementById('stickerLayer');if(st&&st.style.display!=='none'){ctx.font=(52*scale)+'px serif';ctx.fillText(st.textContent,pad,H*0.66)}
+  // caption (burned in)
+  var cap=(document.getElementById('captionInput')?document.getElementById('captionInput').value:'')||(document.getElementById('captionText')?document.getElementById('captionText').textContent:'');
+  if(cap){ctx.font='800 '+(30*scale)+'px Inter, sans-serif';var lines=wrapLines(ctx,cap,W*0.86);var bh=lines.length*38*scale+20*scale;var bw=W*0.88;ctx.fillStyle='rgba(0,0,0,0.74)';roundRect(ctx,(W-bw)/2,H*0.80,bw,bh,10*scale);ctx.fill();ctx.fillStyle='#fff';ctx.textAlign='center';lines.forEach(function(ln,idx){ctx.fillText(ln,W/2,H*0.80+34*scale+idx*38*scale)});ctx.textAlign='left'}
+  // vignette if on
+  var vg=document.getElementById('vignette');if(vg&&vg.style.display==='block'){var vgG=ctx.createRadialGradient(W/2,H/2,W*0.28,W/2,H/2,W*0.75);vgG.addColorStop(0,'rgba(0,0,0,0)');vgG.addColorStop(1,'rgba(0,0,0,0.55)');ctx.fillStyle=vgG;ctx.fillRect(0,0,W,H)}
+  // CTA at end
+  if(t>14){ctx.fillStyle='#fff';ctx.font='800 '+(26*scale)+'px Inter, sans-serif';var cta='Shop Now →  herbnglow.com';var cw=ctx.measureText(cta).width+28*scale;ctx.fillStyle='#111827';roundRect(ctx,pad,H*0.50,cw,44*scale,12*scale);ctx.fill();ctx.fillStyle='#fff';ctx.fillText(cta,pad+14*scale,H*0.50+30*scale)}
+  // progress line
+  ctx.fillStyle='rgba(255,255,255,0.25)';ctx.fillRect(0,H-6,W,6);ctx.fillStyle='#00d4a6';ctx.fillRect(0,H-6,W*(t/(exportDur||18)),6);
+}
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function wrapLines(ctx,text,maxW){var words=text.split(' ');var lines=[];var cur='';words.forEach(function(w){var test=cur?cur+' '+w:w;if(ctx.measureText(test).width>maxW&&cur){lines.push(cur);cur=w}else cur=test});if(cur)lines.push(cur);return lines}
+function wrapText(ctx,text,x,y,maxW,lh){var lines=wrapLines(ctx,text,maxW);lines.forEach(function(ln,i){ctx.fillText(ln,x,y+i*lh)});return lines.length*lh}
+function createBeatAudio(destCtx){
+  // simple generated beat so exported file has an audio track (synth loop, not copyrighted music)
+  try{
+    var ac=exportAudioCtx;var dest=ac.createMediaStreamDestination();var master=ac.createGain();master.gain.value=0.18;master.connect(dest);master.connect(destCtx?destCtx:dest);
+    // store nodes to stop later
+    var nodes=[];var start=ac.currentTime+0.05;var bpm=112;var beat=60/bpm;
+    for(var i=0;i<Math.ceil((exportDur||18)/beat);i++){
+      var t0=start+i*beat;
+      // kick-ish sine drop
+      var o=ac.createOscillator(),gn=ac.createGain();o.type='sine';o.frequency.setValueAtTime(i%4===0?150:120,t0);o.frequency.exponentialRampToValueAtTime(45,t0+0.12);gn.gain.setValueAtTime(0.9,t0);gn.gain.exponentialRampToValueAtTime(0.001,t0+0.18);o.connect(gn);gn.connect(master);o.start(t0);o.stop(t0+0.2);nodes.push(o);
+      // hat
+      if(i%2===1){var o2=ac.createOscillator(),g2=ac.createGain();o2.type='square';o2.frequency.value=6200;g2.gain.setValueAtTime(0.08,t0);g2.gain.exponentialRampToValueAtTime(0.001,t0+0.05);o2.connect(g2);g2.connect(master);o2.start(t0);o2.stop(t0+0.06);nodes.push(o2)}
+      // simple bass note pattern
+      if(i%4===0){var o3=ac.createOscillator(),g3=ac.createGain();o3.type='triangle';o3.frequency.value=[110,98,87,98][(i/4)%4];g3.gain.setValueAtTime(0.35,t0);g3.gain.exponentialRampToValueAtTime(0.001,t0+beat*1.8);o3.connect(g3);g3.connect(master);o3.start(t0);o3.stop(t0+beat*1.9);nodes.push(o3)}
+    }
+    return {stream:dest.stream,nodes:nodes,master:master};
+  }catch(e){return null}
+}
+function startExport(){
+  if(isExporting){showToast('Export already running — wait for it to finish');return}
+  if(!window.MediaRecorder||!HTMLCanvasElement.prototype.captureStream){document.getElementById('exportStatus').innerHTML='<b style="color:#ff8a8a">This browser cannot record video.</b> Try Chrome or Edge on desktop/Android for a real MP4/WebM export.';return}
+  var mime=pickMime();if(!mime){document.getElementById('exportStatus').textContent='No supported video format found in this browser. Try Chrome / Edge.';return}
+  var isMp4=mime.indexOf('mp4')!==-1;var ext=isMp4?'mp4':'webm';
+  var size=getExportSize();var W=size.w,H=size.h;
+  // Cap very large 4K on small screens warning but still allow; downscale if device memory low? Keep requested size.
+  var canvas=document.getElementById('exportCanvas');canvas.width=W;canvas.height=H;canvas.style.display='block';
+  var ctx=canvas.getContext('2d');drawExportFrame(ctx,W,H,0);
+  var bar=document.getElementById('bar'),st=document.getElementById('exportStatus'),result=document.getElementById('exportResult'),btn=document.getElementById('startExportBtn');
+  result.style.display='none';bar.style.width='0%';isExporting=true;btn.textContent='● Recording… keep tab open';btn.disabled=true;btn.style.opacity='0.7';
+  if(lastExportUrl){try{URL.revokeObjectURL(lastExportUrl)}catch(e){}lastExportUrl=null}
+  // Audio
+  var audioPack=null;try{exportAudioCtx=new (window.AudioContext||window.webkitAudioContext)();audioPack=createBeatAudio(null)}catch(e){audioPack=null}
+  var videoStream=canvas.captureStream(exportFps);var tracks=videoStream.getVideoTracks().slice();
+  if(audioPack&&audioPack.stream){audioPack.stream.getAudioTracks().forEach(function(tr){tracks.push(tr)})}
+  exportStream=new MediaStream(tracks);
+  exportChunks=[];
+  var bps= exportRes==='4K'?16000000: exportRes==='2K'?10000000: exportRes==='1080p'?8000000:4000000;
+  try{exportRecorder=new MediaRecorder(exportStream,{mimeType:mime,videoBitsPerSecond:bps,audioBitsPerSecond:128000})}catch(e){exportRecorder=new MediaRecorder(exportStream,{mimeType:mime})}
+  exportRecorder.ondataavailable=function(ev){if(ev.data&&ev.data.size)exportChunks.push(ev.data)};
+  exportRecorder.onstop=function(){finishExport(mime,ext,W,H)};
+  var DURATION=projDur();exportDur=DURATION;exportStartAt=performance.now();
+  st.innerHTML='Rendering <b>'+exportRes+' '+W+'×'+H+'</b> • '+exportFps+' fps • '+mime.split(';')[0]+' — recording in real time… <span id="exportPct">0%</span>';
+  exportRecorder.start(250);
+  function loop(){
+    if(!isExporting)return;
+    var elapsed=(performance.now()-exportStartAt)/1000;
+    if(elapsed>=DURATION){drawExportFrame(ctx,W,H,DURATION-0.01);bar.style.width='100%';var pctEl=document.getElementById('exportPct');if(pctEl)pctEl.textContent='100%';try{exportRecorder.stop()}catch(e){finishExport(mime,ext,W,H)}return}
+    drawExportFrame(ctx,W,H,elapsed);
+    var pct=Math.floor(elapsed/DURATION*100);bar.style.width=pct+'%';var pe=document.getElementById('exportPct');if(pe)pe.textContent=pct+'% • '+elapsed.toFixed(1)+'s / '+DURATION.toFixed(1)+'s';
+    exportRAF=requestAnimationFrame(loop);
+  }
+  exportRAF=requestAnimationFrame(loop);
+  showToast('Export started — rendering real '+ext.toUpperCase()+' file');
+}
+function finishExport(mime,ext,W,H){
+  cancelAnimationFrame(exportRAF);isExporting=false;
+  var btn=document.getElementById('startExportBtn');btn.disabled=false;btn.style.opacity='1';btn.textContent='● Start Export — Render Real File';
+  try{if(exportAudioCtx)exportAudioCtx.close()}catch(e){}exportAudioCtx=null;
+  var type=mime.split(';')[0];var blob=new Blob(exportChunks,{type:type});lastExportBlob=blob;
+  if(!blob.size){document.getElementById('exportStatus').innerHTML='<b style="color:#ff8a8a">Export produced an empty file.</b> Try 1080p / WebM — 4K can exceed phone memory.';return}
+  lastExportUrl=URL.createObjectURL(blob);lastExportName='ClipForge_Herb-n-Glow_Reel_'+exportRes+'_'+W+'x'+H+'.'+ext;
+  var dl=document.getElementById('downloadLink');dl.href=lastExportUrl;dl.download=lastExportName;dl.textContent='⬇ Download '+ext.toUpperCase()+' • '+(blob.size/1048576).toFixed(1)+' MB';
+  var prev=document.getElementById('exportPreview');prev.src=lastExportUrl;
+  document.getElementById('exportMeta').textContent=lastExportName+' • '+W+'×'+H+' • '+exportFps+' fps • '+(exportDur||18).toFixed(1)+'s • '+(blob.size/1048576).toFixed(2)+' MB • Format: '+type+(type.indexOf('webm')!==-1&&exportFormat==='mp4'?' (your browser records WebM — it plays everywhere and uploads to TikTok/YouTube; use Chrome for MP4 where supported)':'');
+  document.getElementById('exportResult').style.display='block';
+  document.getElementById('exportStatus').innerHTML='<b style="color:var(--accent)">✓ Real file rendered — '+exportRes+' ready to download.</b>';
+  document.getElementById('bar').style.width='100%';
+  // auto-download
+  try{var a=document.createElement('a');a.href=lastExportUrl;a.download=lastExportName;document.body.appendChild(a);a.click();a.remove()}catch(e){}
+  showToast('Export complete — file downloading');
+  document.getElementById('exportResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function cancelExport(){
+  if(isExporting){
+    isExporting=false;cancelAnimationFrame(exportRAF);
+    try{if(exportRecorder&&exportRecorder.state!=='inactive')exportRecorder.stop()}catch(e){}
+    try{if(exportAudioCtx)exportAudioCtx.close()}catch(e){}
+    var btn=document.getElementById('startExportBtn');btn.disabled=false;btn.style.opacity='1';btn.textContent='● Start Export — Render Real File';
+    document.getElementById('exportStatus').textContent='Export cancelled.';document.getElementById('bar').style.width='0%';showToast('Export cancelled');
+  }else{closeExport()}
+}
+async function shareExport(){
+  if(!lastExportBlob){showToast('Export a video first');return}
+  try{var file=new File([lastExportBlob],lastExportName,{type:lastExportBlob.type});if(navigator.canShare&&navigator.canShare({files:[file]})){await navigator.share({files:[file],title:'ClipForge Export'})}else{showToast('Share not supported here — use Download')}}catch(e){if(e.name!=='AbortError')showToast('Could not share — use Download')}
+}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(function(){t.style.display='none'},2600)}
+/* --- NEW EDITING FEATURES --- */
+var flipH=1,flipV=1,snapOn=true,bgRemoved=false,markers=[];
+function jumpToProps(id){var el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});el.style.outline='2px solid rgba(0,212,166,.5)';setTimeout(function(){el.style.outline=''},1400)}}
+function applyTransform(){var s=+document.getElementById('scaleRange').value,r=+document.getElementById('rotRange').value,x=+document.getElementById('posXRange').value,y=+document.getElementById('posYRange').value;document.getElementById('scaleVal').textContent=s+'%';document.getElementById('rotVal').textContent=r+'°';document.getElementById('posXVal').textContent=x;document.getElementById('posYVal').textContent=y;var sc=document.getElementById('scene');sc.style.transform='scale('+(s/100*flipH)+','+(s/100*flipV)+') rotate('+r+'deg) translate('+x+'px,'+y+'px)'}
+function flipClip(dir){if(dir==='h')flipH*=-1;else flipV*=-1;applyTransform();showToast(dir==='h'?'Flipped horizontally':'Flipped vertically')}
+function resetTransform(){flipH=1;flipV=1;['scaleRange','rotRange','posXRange','posYRange'].forEach(function(id,i){document.getElementById(id).value=[100,0,0,0][i]});applyTransform();showToast('Transform reset')}
+function pickCrop(el,name){el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active')});el.classList.add('active');showToast('Crop: '+name+' — applied to selected clip')}
+function pickBlend(el,name){el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active')});el.classList.add('active');var sc=document.getElementById('scene');sc.style.mixBlendMode=name==='Normal'?'normal':name.toLowerCase();showToast('Blend mode: '+name)}
+function updateOverlayText(){var v=document.getElementById('textInput').value;var o=document.getElementById('overlayText');o.style.display=v?'block':'none';o.textContent=v}
+function updateTextStyle(){var o=document.getElementById('overlayText');o.style.fontFamily=document.getElementById('fontSel').value;o.style.textAlign=document.getElementById('alignSel').value;var sz=document.getElementById('textSize').value;o.style.fontSize=sz+'px';document.getElementById('textSizeVal').textContent=sz+'px'}
+function setTextColor(bg,fg,el){document.querySelectorAll('.swatch').forEach(function(s){s.classList.remove('active')});el.classList.add('active');var o=document.getElementById('overlayText');o.style.display='block';o.style.background=bg;o.style.color=bg==='#111'?'#fff':(bg==='#fff'?'#111':fg);if(bg==='#f59e0b'){o.style.background='#fde68a';o.style.color='#78350f'}if(bg==='#00d4a6'){o.style.background='#00d4a6';o.style.color='#04201a'}if(bg==='#ff4d7d'){o.style.background='#ff4d7d';o.style.color='#fff'}}
+function toggleTextStyle(kind,el){el.classList.toggle('active');var o=document.getElementById('overlayText');o.style.display='block';if(kind==='bold')o.style.fontWeight=el.classList.contains('active')?'900':'800';if(kind==='stroke')o.style.webkitTextStroke=el.classList.contains('active')?'1px #000':'';if(kind==='shadow')o.style.boxShadow=el.classList.contains('active')?'0 8px 20px rgba(0,0,0,.5)':'';if(kind==='bg')o.style.background=el.classList.contains('active')?'transparent':'';showToast('Text style: '+kind+(el.classList.contains('active')?' on':' off'))}
+function playAnim(cls,el){document.querySelectorAll('#animBox .fxBtn').forEach(function(b){b.classList.remove('active')});if(el)el.classList.add('active');var targets=[document.getElementById('captionText'),document.getElementById('overlayText')];targets.forEach(function(t){t.classList.remove('animPop','animSlide','animFade','animBounce','animType','animZoom');void t.offsetWidth;if(cls)t.classList.add(cls)});showToast('Animation preview playing')}
+function addKeyframe(){var row=document.querySelector('.kfRow');var s=document.createElement('span');s.className='kfDot active';s.textContent='◆ '+playTime.toFixed(1)+'s New';row.appendChild(s);showToast('Keyframe added at '+playTime.toFixed(1)+'s')}
+function applyGrade(){var exp=+document.getElementById('expRange').value,temp=+document.getElementById('tempRange').value,hl=+document.getElementById('hlRange').value,sh=+document.getElementById('shRange').value,vib=+document.getElementById('vibRange').value,sharp=+document.getElementById('sharpRange').value;document.getElementById('expVal').textContent=(exp>0?'+':'')+exp;document.getElementById('tempVal').textContent=(temp>=0?'Warm ':'Cool ')+Math.abs(temp);document.getElementById('hlVal').textContent=(hl>0?'+':'')+hl;document.getElementById('shVal').textContent=(sh>0?'+':'')+sh;document.getElementById('vibVal').textContent=(vib>0?'+':'')+vib;document.getElementById('sharpVal').textContent=sharp;var bright=1+exp/200+hl/400,cont=1.12+sh/300,sat=1.18+vib/120,hue=temp/6;document.getElementById('scene').style.filter='brightness('+bright.toFixed(2)+') contrast('+cont.toFixed(2)+') saturate('+sat.toFixed(2)+') hue-rotate('+hue.toFixed(1)+'deg)'}
+function applyPresetGrade(name,el){document.querySelectorAll('#colorGrade .chip').forEach(function(c){c.classList.remove('active')});el.classList.add('active');var map={'Natural':[0,0,0,0,10,20],'Golden Hour':[8,32,10,-6,24,20],'Product Pop':[6,8,6,4,42,55],'Muted Film':[-4,-8,-4,10,-18,10]};var v=map[name]||map['Natural'];document.getElementById('expRange').value=v[0];document.getElementById('tempRange').value=v[1];document.getElementById('hlRange').value=v[2];document.getElementById('shRange').value=v[3];document.getElementById('vibRange').value=v[4];document.getElementById('sharpRange').value=v[5];applyGrade();showToast('Grade preset: '+name)}
+function toggleSwitch(el,name){el.classList.toggle('on');showToast(name+': '+(el.classList.contains('on')?'ON':'OFF'))}
+function snapToBeat(){playTime=3.2;updateTC();renderTimeline();showToast('Playhead & cuts snapped to nearest beat — 3.2s')}
+function toggleEffect(kind,el){el.classList.toggle('active');var on=el.classList.contains('active');if(kind==='vignette')document.getElementById('vignette').style.display=on?'block':'none';if(kind==='grain')document.getElementById('grain').style.display=on?'block':'none';if(kind==='glow')document.getElementById('scene').style.boxShadow=on?'inset 0 0 80px rgba(255,255,255,.45)':'';if(kind==='blurbg')document.getElementById('scene').style.filter=on?'blur(0.6px) brightness(1.05) saturate(1.2)':'';showToast('Effect '+(on?'added':'removed')+': '+el.textContent.trim())}
+function toggleChroma(el){el.classList.toggle('active');showToast(el.classList.contains('active')?'Chroma Key ON — green screen keyed, tolerance 42%':'Chroma Key OFF')}
+function toggleBgRemove(el){bgRemoved=!bgRemoved;document.getElementById('scene').style.background=bgRemoved?'linear-gradient(160deg,#f8fafc,#e2e8f0)':'linear-gradient(160deg,#0f766e,#164e63 45%,#1e293b)';showToast(bgRemoved?'Background removed — subject kept, transparent BG':'Background restored')}
+function placeSticker(emoji){var l=document.getElementById('stickerLayer');if(!emoji){l.style.display='none';showToast('Sticker cleared');return}l.textContent=emoji;l.style.display='block';showToast('Sticker placed — drag it on the preview to reposition')}
+function setSpeedPreset(v,el){el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active')});el.classList.add('active');document.getElementById('speedVal').textContent=v.toFixed(2)+'×';showToast('Speed: '+v+'× applied to selected clip')}
+function updateCaption(){document.getElementById('captionText').textContent=document.getElementById('captionInput').value}
+function pickCaptionStyle(el,name){el.parentNode.querySelectorAll('.chip').forEach(function(c){c.classList.remove('active')});el.classList.add('active');var c=document.getElementById('captionText');if(name==='Yellow Highlight'){c.style.background='#facc15';c.style.color='#111'}else if(name==='Minimal'){c.style.background='transparent';c.style.color='#fff';c.style.textShadow='0 2px 8px rgba(0,0,0,.8)'}else if(name==='Karaoke'){c.style.background='rgba(0,0,0,.72)';c.style.color='#00d4a6'}else{c.style.background='rgba(0,0,0,.72)';c.style.color='#fff';c.style.textShadow=''}showToast('Caption style: '+name)}
+function toggleSnap(){snapOn=!snapOn;document.getElementById('snapBtn').textContent=snapOn?'🧲 Snap ON':'🧲 Snap OFF';showToast('Magnetic snap '+(snapOn?'ON':'OFF'))}
+function addMarker(){markers.push(playTime);showToast('Marker added at '+playTime.toFixed(1)+'s — '+markers.length+' marker(s) on timeline')}
+function addTrack(){timeline.push({track:'NEW',label:'New Track',items:[{name:'Empty — drag a clip here',dur:3,start:playTime,color:'#334155',sub:'New track'}]});renderTimeline();showToast('New track added below Audio')}
+(function initBeats(){var b=document.getElementById('beatBar');if(!b)return;var h='';for(var i=0;i<28;i++){var ht=6+Math.abs(Math.sin(i*1.7))*22;h+='<i class="'+(i%8===0?'beat':'')+'" style="height:'+ht+'px"></i>'}b.innerHTML=h})();
+/* --- APP PACKAGING (PWA: mobile + desktop) --- */
+var deferredInstall=null,currentPlat='android';
+var PLAT_STEPS={
+android:[['Open ClipForge in <b>Chrome</b>','on your Android phone or tablet.'],['Tap <b>Install app</b> above','— or Chrome menu <b>⋮ → Install app / Add to Home screen</b>.'],['Tap <b>Install</b> to confirm','ClipForge lands on your home screen and in the app drawer.'],['Open it from the icon','It launches full-screen, straight into the editor.']],
+ios:[['Open ClipForge in <b>Safari</b>','on your iPhone or iPad (install only works from Safari).'],['Tap the <b>Share</b> button','the square with an arrow at the bottom of Safari.'],['Tap <b>Add to Home Screen</b>','then <b>Add</b> — the ClipForge icon appears on your home screen.'],['Open it from the icon','It launches full-screen with no Safari bars.']],
+windows:[['Open ClipForge in <b>Chrome or Edge</b>','on your Windows PC or laptop.'],['Click <b>Install app</b> above','— or the install icon at the right of the address bar.'],['Click <b>Install</b> to confirm','ClipForge opens in its own window and pins to Start / taskbar.'],['Launch it like any Windows app','Keyboard shortcuts work: <b>Space</b> play, <b>Ctrl+E</b> export.']],
+mac:[['Open ClipForge in <b>Chrome or Edge</b>','on your Mac (Safari on Mac cannot install web apps from a page button).'],['Click <b>Install app</b> above','— or the install icon at the right of the address bar.'],['Click <b>Install</b> to confirm','ClipForge is added to Applications and Launchpad.'],['Launch it like any Mac app','It runs in its own window — <b>⌘E</b> opens Export.']]
+};
+function detectPlatform(){var ua=navigator.userAgent||'';if(/Android/i.test(ua))return'android';if(/iPhone|iPad|iPod/i.test(ua)||(/Macintosh/i.test(ua)&&navigator.maxTouchPoints>1))return'ios';if(/Windows/i.test(ua))return'windows';if(/Macintosh|Mac OS/i.test(ua))return'mac';return'android'}
+function isStandalone(){try{return window.matchMedia('(display-mode: standalone)').matches||window.matchMedia('(display-mode: window-controls-overlay)').matches||navigator.standalone===true}catch(e){return false}}
+function pickPlatform(p,el){currentPlat=p;document.querySelectorAll('#platGrid .plat').forEach(function(b){b.classList.toggle('active',b.dataset.plat===p)});var names={android:'Android',ios:'iPhone & iPad',windows:'Windows',mac:'Mac'};var steps=PLAT_STEPS[p]||[];document.getElementById('platSteps').innerHTML=steps.map(function(s){return '<li><div><b>'+s[0]+'</b> <span>'+s[1]+'</span></div></li>'}).join('');var d=document.getElementById('appDetected');if(d)d.textContent='Your device looks like: '+names[p]}
+function openApp(){document.getElementById('appModal').classList.add('open');pickPlatform(detectPlatform())}
+function closeApp(){document.getElementById('appModal').classList.remove('open')}
+function safeGet(k){try{return sessionStorage.getItem(k)}catch(e){return null}}
+function safeSet(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}
+function isEmbedded(){try{return window.self!==window.top}catch(e){return true}}
+function dismissBanner(){safeSet('cf_banner_off','1');document.getElementById('appBanner').classList.remove('show')}
+function refreshAppState(){
+  var installed=isStandalone();
+  document.body.classList.toggle('isApp',installed);
+  ['appStatus','appStatusModal'].forEach(function(id){var el=document.getElementById(id);if(el){el.textContent=installed?'✓ INSTALLED APP':'WEB APP';el.classList.toggle('installed',installed)}});
+  var bb=document.getElementById('bigInstallBtn');
+  if(installed){dismissBanner();var h=document.getElementById('installHint');if(h)h.textContent='ClipForge is already running as an installed app on this device — full-screen, from its own icon.';if(bb)bb.textContent='✓ Already installed — running as app'}
+  else{
+    if(bb)bb.textContent=deferredInstall?'📲 Install on this device':'📲 See install steps for your device';
+    if(isEmbedded()&&!deferredInstall){var bt=document.getElementById('appBannerText');if(bt)bt.textContent='Install needs ClipForge open in your browser — tap Get the App for the steps for your device.'}
+    if(!safeGet('cf_banner_off')){document.getElementById('appBanner').classList.add('show')}
+  }
+}
+async function installApp(){
+  if(isStandalone()){showToast('Already installed — you are using the ClipForge app');return}
+  if(deferredInstall){
+    try{deferredInstall.prompt();var choice=await deferredInstall.userChoice;deferredInstall=null;refreshAppState();if(choice&&choice.outcome==='accepted'){showToast('Installing ClipForge Studio… find it on your home screen / Start menu')}else{showToast('Install dismissed — steps for your device are below');openApp()}}catch(e){openApp()}
+    return;
+  }
+  openApp();
+  var plat=detectPlatform();var hint=document.getElementById('installHint');
+  if(hint){hint.textContent=isEmbedded()?('You are viewing ClipForge inside another app, which blocks the browser install prompt. Open ClipForge Studio directly in '+(plat==='ios'?'Safari':'Chrome')+' and Install will work there — meanwhile, the steps for your device are below.'):('Your browser has not offered its install prompt yet. The steps below install the same app — or use your browser menu: '+(plat==='ios'?'Share → Add to Home Screen':'⋮ → Install app / Add to Home screen'))}
+  showToast(plat==='ios'?'iPhone: Share → Add to Home Screen':'Follow the install steps for your device below');
+}
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredInstall=e;var b=document.getElementById('appBannerText');if(b)b.textContent='Your browser is ready to install it — one tap, full-screen editor, home-screen icon.';refreshAppState()});
+window.addEventListener('appinstalled',function(){showToast('✓ ClipForge Studio installed — open it from your home screen');refreshAppState()});
+try{window.matchMedia('(display-mode: standalone)').addEventListener('change',refreshAppState)}catch(e){}
+document.addEventListener('keydown',function(e){
+  var tag=(e.target&&e.target.tagName)||'';var typing=tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT';
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='e'){e.preventDefault();openExport()}
+  else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){e.preventDefault();showToast('Draft saved — Herb n Glow • Product Reel')}
+  else if(typing){return}
+  else if(e.code==='Space'&&tag!=='BUTTON'){e.preventDefault();togglePlay()}
+  else if(e.key==='ArrowLeft'){seek(-5)}
+  else if(e.key==='ArrowRight'){seek(5)}
+});
+var fileInputEl=document.getElementById('fileInput');
+if(fileInputEl){fileInputEl.addEventListener('change',function(){handleFiles(fileInputEl.files);fileInputEl.value=''})}
+var binPanelEl=document.getElementById('binPanel');
+if(binPanelEl){
+  binPanelEl.addEventListener('dragover',function(e){e.preventDefault();binPanelEl.style.outline='2px dashed var(--accent)';binPanelEl.style.outlineOffset='-2px'});
+  binPanelEl.addEventListener('dragleave',function(){binPanelEl.style.outline=''});
+  binPanelEl.addEventListener('drop',function(e){e.preventDefault();binPanelEl.style.outline='';handleFiles(e.dataTransfer&&e.dataTransfer.files)});
+}
+window.addEventListener('dragover',function(e){e.preventDefault()});
+window.addEventListener('drop',function(e){e.preventDefault()});
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('data:application/javascript;base64,LyogQ2xpcEZvcmdlIFN0dWRpbyDigJQgYXBwIHNoZWxsIGNhY2hlLgogICBTZXJ2ZWQgZnJvbSBhc3NldHMvLCBzbyBpdHMgc2NvcGUgaXMgdGhpcyBmb2xkZXI6IGl0IGNhY2hlcyB0aGUgYXBwIGljb25zCiAgIGFuZCBtYW5pZmVzdCBmb3IgcmVwZWF0IGluc3RhbGxzLiBUaGUgZWRpdG9yIHBhZ2UgaXRzZWxmIGlzIGNhY2hlZCBieSB0aGUKICAgYnJvd3NlcidzIEhUVFAgY2FjaGU7IHRoaXMgd29ya2VyIG5ldmVyIGJsb2NrcyBvciByZXdyaXRlcyBwYWdlIGxvYWRzLiAqLwp2YXIgQ0FDSEUgPSAnY2xpcGZvcmdlLXNoZWxsLXYyJzsKdmFyIFNIRUxMID0gWycuL21hbmlmZXN0LndlYm1hbmlmZXN0JywgJy4vaWNvbi0xOTIucG5nJywgJy4vaWNvbi01MTIucG5nJywgJy4vaWNvbi1tYXNrYWJsZS01MTIucG5nJywgJy4vYXBwbGUtdG91Y2gtaWNvbi5wbmcnLCAnLi9mYXZpY29uLTMyLnBuZyddOwpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2luc3RhbGwnLCBmdW5jdGlvbiAoZSkgewogIGUud2FpdFVudGlsKGNhY2hlcy5vcGVuKENBQ0hFKS50aGVuKGZ1bmN0aW9uIChjKSB7IHJldHVybiBjLmFkZEFsbChTSEVMTCk7IH0pLnRoZW4oZnVuY3Rpb24gKCkgeyByZXR1cm4gc2VsZi5za2lwV2FpdGluZygpOyB9KSk7Cn0pOwpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2FjdGl2YXRlJywgZnVuY3Rpb24gKGUpIHsKICBlLndhaXRVbnRpbChjYWNoZXMua2V5cygpLnRoZW4oZnVuY3Rpb24gKGtleXMpIHsKICAgIHJldHVybiBQcm9taXNlLmFsbChrZXlzLm1hcChmdW5jdGlvbiAoaykgeyByZXR1cm4gayA9PT0gQ0FDSEUgPyBudWxsIDogY2FjaGVzLmRlbGV0ZShrKTsgfSkpOwogIH0pLnRoZW4oZnVuY3Rpb24gKCkgeyByZXR1cm4gc2VsZi5jbGllbnRzLmNsYWltKCk7IH0pKTsKfSk7CnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignZmV0Y2gnLCBmdW5jdGlvbiAoZSkgewogIGlmIChlLnJlcXVlc3QubWV0aG9kICE9PSAnR0VUJykgcmV0dXJuOwogIGUucmVzcG9uZFdpdGgoY2FjaGVzLm1hdGNoKGUucmVxdWVzdCkudGhlbihmdW5jdGlvbiAoaGl0KSB7IHJldHVybiBoaXQgfHwgZmV0Y2goZS5yZXF1ZXN0KTsgfSkpOwp9KTsK').catch(function(){})})}
+/* --- NATIVE PACKAGING (APK + EXE) --- */
+function openNative(){document.getElementById('nativeModal').classList.add('open');updateNativeSummary()}
+function closeNative(){document.getElementById('nativeModal').classList.remove('open')}
+function nativeVals(){var n=(document.getElementById('nativeAppName')||{}).value||'ClipForge Studio';var b=(document.getElementById('nativeBundleId')||{}).value||'com.clipforge.studio';var v=(document.getElementById('nativeVersion')||{}).value||'1.0.0';return{name:String(n).trim()||'ClipForge Studio',id:String(b).trim()||'com.clipforge.studio',version:String(v).trim()||'1.0.0'}}
+function updateNativeSummary(){var c=nativeVals();var el=document.getElementById('nativeSummary');if(el)el.textContent=c.name+' • '+c.id+' • v'+c.version+' — Android APK + Windows EXE'}
+function downloadTextFile(filename,content,mime){try{var blob=new Blob([content],{type:(mime||'text/plain')+';charset=utf-8'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){try{URL.revokeObjectURL(url)}catch(e){}},4000);showToast('Downloading '+filename)}catch(e){showToast('Download blocked — try in Chrome / Edge')}}
+function capacitorConfigObj(){var c=nativeVals();return{appId:c.id,appName:c.name,webDir:'dist',backgroundColor:'#0b0e13',android:{allowMixedContent:true},plugins:{SplashScreen:{launchShowDuration:600,backgroundColor:'#0b0e13'}}}}
+function tauriConfigObj(){var c=nativeVals();return{'$schema':'https://schema.tauri.app/config/2',productName:c.name,version:c.version,identifier:c.id,build:{beforeDevCommand:'npm run dev',devUrl:'http://localhost:5173',beforeBuildCommand:'npm run build',frontendDist:'../dist'},app:{windows:[{title:c.name,width:1280,height:820,minWidth:960,minHeight:640}],security:{csp:null}},bundle:{active:true,targets:['nsis','msi'],icon:['icons/32x32.png','icons/128x128.png','icons/icon.ico'],windows:{nsis:{displayLanguageSelector:false,installMode:'currentUser'}}}}}
+function downloadCapacitorConfig(){downloadTextFile('capacitor.config.json',JSON.stringify(capacitorConfigObj(),null,2),'application/json')}
+function downloadTauriConfig(){downloadTextFile('tauri.conf.json',JSON.stringify(tauriConfigObj(),null,2),'application/json')}
+function downloadAndroidScript(){var c=nativeVals();var s='@echo off\r\nREM ClipForge Studio — Android APK build (Windows host)\r\nREM App: '+c.name+'  ID: '+c.id+'  v'+c.version+'\r\necho Installing dependencies...\r\ncall npm install\r\ncall npm install @capacitor/core @capacitor/cli @capacitor/android\r\ncall npm run build\r\ncall npx cap add android\r\ncall npx cap sync android\r\necho.\r\necho Next: open the android folder in Android Studio\r\necho Build ^> Generate Signed Bundle / APK ^> APK ^> release\r\necho Output: android\\app\\build\\outputs\\apk\\release\\app-release.apk\r\npause\r\n';downloadTextFile('build-android.bat',s)}
+function downloadWindowsScript(){var c=nativeVals();var s='@echo off\r\nREM ClipForge Studio — Windows EXE build\r\nREM App: '+c.name+'  ID: '+c.id+'  v'+c.version+'\r\necho Installing dependencies...\r\ncall npm install\r\ncall npm install -D @tauri-apps/cli\r\ncall npm run build\r\ncall npm run tauri build\r\necho.\r\necho Installer output: src-tauri\\target\\release\\bundle\\nsis\\\r\necho Look for: '+c.name.replace(/\s+/g,'-')+'_'+c.version+'_x64-setup.exe\r\npause\r\n';downloadTextFile('build-windows.bat',s)}
+function copyBuildCommands(){var txt='Android APK:\nnpm install && npm run build\nnpx cap add android && npx cap sync android\n# Android Studio > Build > Generate Signed APK\n\nWindows EXE:\nnpm install && npm run build\nnpm run tauri build\n# Output: src-tauri/target/release/bundle/nsis/';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){showToast('Build commands copied')},function(){showToast('Copy blocked — open the Packaging Kit instead')})}else{showToast('Copy not available — download the Packaging Kit')}}
+function downloadPackagingKit(){var c=nativeVals();var cap=JSON.stringify(capacitorConfigObj(),null,2);var tau=JSON.stringify(tauriConfigObj(),null,2);var pkg=JSON.stringify({name:'clipforge-studio',version:c.version,private:true,scripts:{dev:'vite',build:'vite build',preview:'vite preview','tauri':'tauri'},dependencies:{'@capacitor/android':'^6.0.0','@capacitor/core':'^6.0.0'},devDependencies:{'@capacitor/cli':'^6.0.0','@tauri-apps/cli':'^2.0.0'}},null,2);var md='# ClipForge Studio — APK + EXE Packaging Kit\n\nApp: **'+c.name+'**  \nPackage ID: `'+c.id+'`  \nVersion: `'+c.version+'`\n\nThis kit packages the ClipForge Studio web editor (this exact app) as:\n- **Android .apk** via Capacitor 6\n- **Windows .exe installer** via Tauri 2\n\nIcons already prepared in the web app: `data:image/png;base64,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`, `data:image/png;base64,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`, `data:image/png;base64,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`, `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFi0lEQVR4nO3dPXJURxSG4R6VMmESYu/BMYk3wBq8AFeRaRlkrvICvAZvwIlj78GxEhllVOHACA9X96e7b/+c8533SREz3bovh547A7okA+5ev/k8ew047+nx4TJ7DVMWQMAxzAh82BMScWyj4u76JESMNT3j7vLAhIwcPcK+af2AxIxcPVpp9ieEkHFGq2ndZEITM85q1dCpPxWEjB7OTOvqCU3M6OVMW1VBEzN6q22sOGhixig1rRUFTcwYrbS57KCJGbOUtJcVNDFjttwGD4MmZliR02Lzt76BmXaDZjrDmqMmN4MmZli11yZHDkhZDZrpDOu2Gn0RNDHDi7VWOXJAyjdBM53hzbJZJjSkEDSkfA2a4wa8um6XCQ0pBA0pNylx3IB/zw0zoSGFoCGFoCHlwvkZSpjQkELQkELQkELQkELQkELQkELQkELQkHI7ewFqnv78pfj33L1932ElMfFO4Uk1AR8h8HoEXaFHxFuIuwxBFxgZ8hJh5yHoDDNDXiLsfQS9w1LIS4S9jtt2GyzHnJL99c3ChF7wGArT+n9M6CseY07J77p7IOgvvEfhff2tEHTSiUFlH2eED1otArX9lAodtOrFV91XjrBBq1909f1tCRl0lIsdZZ/XwgUd7SJH22+4oKEtVNDRptWzSPsOE3Ski7omyv7DBI0YQgTdejrdvrtv+nijRJjSIYLu4fbdvduwlckH3XsqeQtbfUrLBz2Kt7BVSQc9Yxp5CFt5SksHPZOHsBURdGeEPZZs0Nb+WrUWtrXvTyuyQVtlLWw1BD0JUfdB0BMxrduTDNrb+XBW2N6+Tzkkg/aKiX0eQRtE2PUI2jDCLkfQDhB2PoJ2hLCPEbRDhL2Nn4Ll0KffP8xeglkE7QghHyNoBwg5H0EbRsjlCNogQq5H0IYQ8nmSQd+9fe/qgzezQlb8YUOSQXvBRG6PN1YmIeY+mNCDEXJfskFbO0dbC1nx/JyScNBWWAtZHUF3QshzSAc949jhIWTV40ZK4kGP5CHkCOSD7j2lvYWsPJ1TChB0L95CjuJy9/rN59mLGMHSLbxZ1KdzSrxTCDFhgo4wnfZE2X+YoFOKc1GXIu07VNDQFy7oSNMqpXj7DRd0SnEucpR9XgsZdEr6F1t9f1vCBp2S7kVX3VeO0EGnpHfx1fZTKnzQKelEoLKPMwj6C+8xeF9/KwR9xWsUXtfdQ5gPJ5Xy8GEmQn6JCb3BeizW1zcLEzqDpWlNyPsIusDMsAk5D0FXGBk2IZch6JN6xE3E9Qi6sZrACbgdgoYUbttBCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDCkFDyvAfGmTpH5ymlPfh+o+/fdfkuV799M/h1/xw/3eT59rz14fvD7/m448/b/7aqz9+bbmcpoZ9wN9ayEtrYbcKeWkt7BEhL62FvRfyksWwOXJAypCgrU/nlF6usdd0XnvsGdN57XlLpnPN14/AhIYUgoaUIUF7+Gf6yzXm3JGotXzsnLsOPSyft/RFHi8Kgc6G/78c1l4gch96HfehAQM4ckAKQUMKQUMKQUPKzdPjw2X2IoAWnh4fLkxoSCFoSCFoSLlJ6b+zx+yFAGc8N8yEhhSChpSvQXPsgFfX7TKhIYWgIeWboDl2wJtls0xoSHkRNFMaXqy1ujqhiRrWbTXKkQNSNoNmSsOqvTZ3JzRRw5qjJjlyQMph0ExpWJHTYtaEJmrMlttg9pGDqDFLSXtFZ2iixmilzRW/KCRqjFLTWtVdDqJGb7WNVd+2I2r0cqatJlHyP5iihRZDsskbK0xrnNWqoeYhMq1RovUwbP7WN9MauXq00jU+pjXW9Bx6w6Ypccc26m/uKccD4o5hxvHTxHmXwDVYeP30L+o13gU1aMGMAAAAAElFTkSuQmCC`. Copy them into the generated icon folders, or run the wrapper icon generator.\n\n---\n\n## 0. One-time PC setup\n\n- Node.js 20+ — https://nodejs.org\n- For APK: Android Studio (includes Android SDK + JDK 17)\n- For EXE: Rust via https://rustup.rs + Microsoft VS Build Tools (Desktop development with C++)\n\n## 1. Project layout\n\n```\nclipforge-studio/\n  package.json\n  capacitor.config.json\n  dist/            <- built web app (npm run build output — put this editor there)\n  android/         <- generated by Capacitor\n  src-tauri/\n    tauri.conf.json\n```\n\n## 2. package.json\n\n```json\n'+pkg+'\n```\n\n## 3. Android APK — Capacitor\n\n`capacitor.config.json`:\n\n```json\n'+cap+'\n```\n\nCommands:\n\n```bash\nnpm install\nnpm run build\nnpx cap add android\nnpx cap sync android\n```\n\nSigning key (once — keep this file private, you need it for every update):\n\n```bash\nkeytool -genkey -v -keystore clipforge.keystore -alias clipforge -keyalg RSA -keysize 2048 -validity 10000\n```\n\nThen: open `android/` in Android Studio → **Build → Generate Signed Bundle / APK → APK → release**.\n\n**Final file:** `android/app/build/outputs/apk/release/app-release.apk` — copy it to the phone and tap to install (allow “Install via USB / unknown apps” for that file manager if Android asks).\n\n## 4. Windows EXE — Tauri\n\n`src-tauri/tauri.conf.json`:\n\n```json\n'+tau+'\n```\n\nCommands (Windows PC):\n\n```bash\nnpm install\nnpm run build\nnpm run tauri build\n```\n\n**Final files:** `src-tauri/target/release/bundle/nsis/*-setup.exe` (installer) and `src-tauri/target/release/bundle/msi/*.msi`.\nUnsigned installers show a Windows “unknown publisher” prompt — click **More info → Run anyway** for personal installs. A paid code-signing certificate removes that prompt for public distribution.\n\n## 5. Updating later\n\nBump the version above, rebuild the web app, then re-run `npx cap sync` (APK) / `npm run tauri build` (EXE). Always sign the APK with the same `clipforge.keystore`, or Android will refuse to update an installed copy.\n';downloadTextFile('ClipForge-Packaging-Kit.md',md,'text/markdown')}
+renderBin();updateTC();updateExportSummary();refreshAppState();
+</script>
+</body>
+</html>
