@@ -14,7 +14,7 @@ function createWindow() {
       nodeIntegration: false
     }
   });
-  win.loadFile(path.join(__dirname, 'www', 'index.html'));
+  win.loadFile(path.join(__dirname, 'index.html'));
 }
 
 app.whenReady().then(() => {
